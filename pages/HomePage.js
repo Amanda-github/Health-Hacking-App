@@ -40,7 +40,9 @@ const HomePage = ({ navigation }) => {
             <CardItem footer>
               <View>
                 <Text>
-                  <Button transparent>
+                  <Button
+                    onPress={() => navigation.navigate("ActivitiesScreen")}
+                  >
                     <Icon name="arrow-forward" />
                   </Button>
                 </Text>
