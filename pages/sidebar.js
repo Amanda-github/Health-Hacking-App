@@ -1,5 +1,5 @@
 import React from "react";
-import { AppRegistry, Image, StatusBar } from "react-native";
+import { AppRegistry, Image, StatusBar, View } from "react-native";
 import {
   Button,
   Text,
@@ -10,9 +10,9 @@ import {
   Icon
 } from "native-base";
 
-const Routes = ["Home", "Profile", "Settings"];
+const Routes = ["HomePage"];
 
-const SideBar = ({navigation}) => {
+const SideBar = ({ navigation }) => {
   return (
     <Container>
       <Content>
@@ -42,14 +42,19 @@ const SideBar = ({navigation}) => {
               "https://www.nicepng.com/png/detail/139-1396003_satisfied-customer-png-download-happy-customer-icon-png.png"
           }}
         />
-        <List dataArray={Routes}
-        contentContainerStyle={{marginTop:120}}
-        renderRow={data=>{
-            return(
-                <ListItem button onPress={()=>navigation.navigate()}
-            )
-        }}
-
+        <List
+          dataArray={Routes}
+          contentContainerStyle={{ marginTop: 120 }}
+          renderRow={data => {
+            return (
+              <ListItem button onPress={() => navigation.navigate(data)}>
+                <View>
+                  <Text>{data}</Text>
+                </View>
+              </ListItem>
+            );
+          }}
+        />
       </Content>
     </Container>
   );
