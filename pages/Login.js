@@ -78,9 +78,9 @@ class Login extends Component {
 
           <TouchableOpacity
             style={styles.submitButton}
-            onPress={() => this.login(this.state.password, this.state.username)}
+            onPress={() => this.props.navigation.navigate("HomeScreen")}
           >
-            <Text style={styles.submitButtonText}> Submit </Text>
+            <Text style={styles.submitButtonText}> Log in </Text>
           </TouchableOpacity>
           <Text style={{ color: "white", paddingTop: 30 }}>
             Sign Up Instead ??
