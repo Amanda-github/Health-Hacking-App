@@ -5,6 +5,7 @@ import Breakfast from "../pages/Breakfast";
 import Lunch from "../pages/Lunch";
 import Dinner from "../pages/Dinner";
 import Login from "../pages/Login";
+import SignUp from "../pages/Signup";
 
 const Stack = createStackNavigator();
 
@@ -15,7 +16,12 @@ const MainStack = () => {
         <Stack.Screen
           name="LoginScreen"
           component={Login}
-          options={{ title: "Login Here" }}
+          options={{ title: "Log In Here" }}
+        />
+        <Stack.Screen
+          name="SignUpScreen"
+          component={SignUp}
+          options={{ title: "Sign Up Here" }}
         />
         <Stack.Screen
           name="HomeScreen"

@@ -87,7 +87,7 @@ class Login extends Component {
           </Text>
           <Text
             style={{ color: "red", fontSize: 20 }}
-            onPress={() => Linking.openURL("http://google.com")}
+            onPress={() => this.props.navigation.navigate("SignUpScreen")}
           >
             Click Here !!
           </Text>
