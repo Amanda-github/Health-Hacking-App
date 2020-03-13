@@ -1,11 +1,27 @@
 import React from "react";
-import { NavigationContainer } from "@react-navigation/native";
-import StackNavigator from "./navigators/StackNavigation";
+import { StyleSheet, Text, View } from "react-native";
+import { ThemeProvider } from "react-native-elements";
+import Signup from "./Pages/signup";
+import Login from "./Pages/login"
+import Profile from "./Pages/profile"
+import EditProfile from "./pages/EditProfile";
 
 export default function App() {
   return (
-    <NavigationContainer>
-      <StackNavigator />
-    </NavigationContainer>
+    <ThemeProvider>
+      {" "}
+      <View style={styles.container}>
+        <Login />
+      </View>
+    </ThemeProvider>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: "#fff",
+    alignItems: "center",
+    justifyContent: "center"
+  }
+});
