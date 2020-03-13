@@ -58,6 +58,7 @@ const HomePage = ({ navigation }) => {
             <Button onPress={() => navigation.navigate("LunchScreen")} iconLeft>
               <Icon name="home" />
               <Text>Lunch</Text>
+              <Text></Text>
             </Button>
             <Button
               onPress={() => navigation.navigate("DinnerScreen")}
