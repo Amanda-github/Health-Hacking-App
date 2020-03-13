@@ -26,7 +26,7 @@ class Login extends Component {
     console.log("hello");
     axios({
       method: "POST",
-      url: "http://192.168.1.52:5000/api/v1/users/login",
+      url: "https://team-4.herokuapp.com/api/v1/users/login",
       data: {
         username: username,
         password: pass

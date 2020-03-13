@@ -1,6 +1,9 @@
 import React from "react";
 import HomePage from "../pages/HomePage";
 import Profile from "../pages/Profile";
+import Breakfast from "../pages/Breakfast";
+import Lunch from "../pages/Lunch";
+import Dinner from "../pages/Dinner";
 import { createDrawerNavigator } from "@react-navigation/drawer";
 
 const Drawer = createDrawerNavigator();
@@ -23,6 +26,21 @@ const TabNavigation = () => {
         name="ProfileScreen"
         component={Profile}
         options={{ title: "My Profile" }}
+      />
+      <Drawer.Screen
+        name="BreakfastScreen"
+        component={Breakfast}
+        options={{ title: "Breakfast" }}
+      />
+      <Drawer.Screen
+        name="LunchScreen"
+        component={Lunch}
+        options={{ title: "Lunch" }}
+      />
+      <Drawer.Screen
+        name="DinnerScreen"
+        component={Dinner}
+        options={{ title: "Dinner" }}
       />
     </Drawer.Navigator>
   );

@@ -1,7 +1,6 @@
 import React from "react";
 import {
   Container,
-  Header,
   Content,
   Card,
   CardItem,
@@ -11,7 +10,7 @@ import {
   Button,
   View
 } from "native-base";
-
+import { StyleSheet, Dimensions } from "react-native";
 const HomePage = ({ navigation }) => {
   return (
     <>
@@ -19,12 +18,19 @@ const HomePage = ({ navigation }) => {
         style={{
           flex: "center",
           alignItems: "center",
-          justifyContent: "center"
+          justifyContent: "center",
+          // width:Dimensions.get('window').width
+          width: "99%"
         }}
       >
-        <Header />
-        <Content>
-          <Card style={{ width: 500 }}>
+        <View
+          style={{
+            flex: "center",
+            alignItems: "center",
+            justifyContent: "center"
+          }}
+        >
+          <Card style={{ width: "80%" }}>
             <CardItem header>
               <View>
                 <Text>Daily Activities</Text>
@@ -47,20 +53,34 @@ const HomePage = ({ navigation }) => {
               </View>
             </CardItem>
           </Card>
-          <Card style={{ width: 500 }}>
+          <Card
+            style={{
+              width: "80%",
+              alignContent: "center",
+              bottom: 30,
+              paddingTop: 50,
+              paddingLeft: 100
+            }}
+          >
             <Button
+              style={styles.button}
               onPress={() => navigation.navigate("BreakfastScreen")}
               iconLeft
             >
               <Icon name="home" />
               <Text>Breakfast</Text>
             </Button>
-            <Button onPress={() => navigation.navigate("LunchScreen")} iconLeft>
+            <Button
+              style={styles.button}
+              onPress={() => navigation.navigate("LunchScreen")}
+              iconLeft
+            >
               <Icon name="home" />
-              <Text>Lunch</Text>
+              <Text style={{ paddingLeft: 200 }}>Lunch</Text>
               <Text></Text>
             </Button>
             <Button
+              style={styles.button}
               onPress={() => navigation.navigate("DinnerScreen")}
               iconLeft
             >
@@ -68,9 +88,18 @@ const HomePage = ({ navigation }) => {
               <Text>Dinner</Text>
             </Button>
           </Card>
-        </Content>
+        </View>
       </Container>
     </>
   );
 };
 export default HomePage;
+const styles = StyleSheet.create({
+  button: {
+    alignContent: "center",
+    alignSelf: "center",
+    alignItems: "center",
+    width: 300,
+    right: 48
+  }
+});
