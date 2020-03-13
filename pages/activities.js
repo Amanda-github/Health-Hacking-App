@@ -4,20 +4,39 @@ import { Card, ThemeProvider, colors } from "react-native-elements";
 import RNPickerSelect from 'react-native-picker-select';
 
 
-const Activities = () => {
-    return (
-        <View>
-            <Text>
-                <h1>Activities page</h1>{" "}
-            </Text>
-            <Card style={{ width: 2000 }}>
-                <Text style={{ margin: 20 }}>
-                    <h2>'BARCHART or something'</h2>
-                    {/* <BarChart></BarChart> */}
+
+class Activities extends Component {
+    state = {
+        activity: "",
+        email: "",
+        password: ""
+    };
+    handleActivity = text => {
+        this.setState({ activity: text });
+    };
+    handleEmail = text => {
+        this.setState({ email: text });
+    };
+    handlePassword = text => {
+        this.setState({ password: text });
+    };
+
+    render() {
+
+        return (
+            <View>
+                <Text>
+                    <h1>Activities page</h1>{" "}
                 </Text>
-            </Card>
-        </View>
-    )
+                <Card style={{ width: 2000 }}>
+                    <Text style={{ margin: 20 }}>
+                        <h2>'BARCHART or something'</h2>
+                        {/* <BarChart></BarChart> */}
+                    </Text>
+                </Card>
+            </View>
+        )
+    }
 }
 
 export default Activities
