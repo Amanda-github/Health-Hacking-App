@@ -1,27 +1,10 @@
-import React from "react";
-import { StyleSheet, Text, View } from "react-native";
-import { ThemeProvider } from "react-native-elements";
-import Signup from "./Pages/signup";
-import Login from "./Pages/login"
-import Profile from "./Pages/profile"
-import EditProfile from "./pages/EditProfile";
-
+import React from “react”;
+import { NavigationContainer } from “@react-navigation/native”;
+import MainStack from “./navigators/StackNavigation”;
 export default function App() {
   return (
-    <ThemeProvider>
-      {" "}
-      <View style={styles.container}>
-        <Login />
-      </View>
-    </ThemeProvider>
+    <NavigationContainer>
+      <MainStack />
+    </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center"
-  }
-});
