@@ -1,19 +1,22 @@
 import React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
-import { createDrawerNavigator } from "@react-navigation/drawer";
-import TabNavigation from "../navigators/DrawerNavigation";
 import HomePage from "../pages/HomePage";
 import Breakfast from "../pages/Breakfast";
 import Lunch from "../pages/Lunch";
 import Dinner from "../pages/Dinner";
+import Login from "../pages/Login";
 
 const Stack = createStackNavigator();
-const Drawer = createDrawerNavigator();
 
 const MainStack = () => {
   return (
     <>
-      <Stack.Navigator>
+      <Stack.Navigator initialRouteName="Home">
+        <Stack.Screen
+          name="LoginScreen"
+          component={Login}
+          options={{ title: "Login Here" }}
+        />
         <Stack.Screen
           name="HomeScreen"
           component={HomePage}
@@ -34,9 +37,6 @@ const MainStack = () => {
           component={Dinner}
           options={{ title: "Dinner" }}
         />
-        <Drawer.Navigator initialRouteName="Home">
-          <Drawer.Screen name="SideBar" component={TabNavigation} />
-        </Drawer.Navigator>
       </Stack.Navigator>
     </>
   );
