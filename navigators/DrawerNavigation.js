@@ -1,5 +1,6 @@
 import React from "react";
 import HomePage from "../pages/HomePage";
+import Profile from "../pages/Profile";
 import { createDrawerNavigator } from "@react-navigation/drawer";
 
 const Drawer = createDrawerNavigator();
@@ -17,6 +18,11 @@ const TabNavigation = () => {
         name="HomeScreen"
         component={HomePage}
         options={{ title: "Home" }}
+      />
+      <Drawer.Screen
+        name="ProfileScreen"
+        component={Profile}
+        options={{ title: "My Profile" }}
       />
     </Drawer.Navigator>
   );
