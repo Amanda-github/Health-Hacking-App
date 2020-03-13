@@ -8,17 +8,17 @@ import RNPickerSelect from 'react-native-picker-select';
 class Activities extends Component {
     state = {
         activity: "",
-        email: "",
-        password: ""
+        calories: "",
+        weight: ""
     };
     handleActivity = text => {
         this.setState({ activity: text });
     };
-    handleEmail = text => {
-        this.setState({ email: text });
+    handleCalories = text => {
+        this.setState({ calories: text });
     };
-    handlePassword = text => {
-        this.setState({ password: text });
+    handleWeight = text => {
+        this.setState({ weight: text });
     };
 
     render() {
