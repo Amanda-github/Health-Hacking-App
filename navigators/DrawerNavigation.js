@@ -1,24 +1,26 @@
-import React, { Component } from "react";
-// import HomePage from "../pages/HomePage";
-import SideBar from "../pages/SideBar";
-import { Drawer } from "native-base";
+import React from "react";
+import HomePage from "../pages/HomePage";
+// import SideBar from "../pages/÷";
+import { createDrawerNavigator } from "@react-navigation/drawer";
 
-export default class DrawerNavigation extends Component {
-  closeDrawer = () => {
-    this.drawer._root.close();
-  };
-  openDrawer = () => {
-    this.drawer._root.open();
-  };
-  render() {
-    return (
-      <Drawer
-        ref={ref => {
-          this.drawer = ref;
-        }}
-        content={<SideBar navigator={this.navigator} />}
-        onClose={() => this.closeDrawer()}
-      ></Drawer>
-    );
-  }
-}
+const Drawer = createDrawerNavigator();
+
+const TabNavigation = () => {
+  return (
+    <Drawer.Navigator
+      initialRouteName="HomeScreen"
+      drawerStyle={{
+        backgroundColor: "#c6cbef",
+        width: 240
+      }}
+    >
+      <Drawer.Screen
+        name="HomeScreen"
+        component={HomePage}
+        options={{ title: "Home" }}
+      />
+    </Drawer.Navigator>
+  );
+};
+
+export default TabNavigation;

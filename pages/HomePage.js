@@ -24,6 +24,10 @@ const HomePage = ({ navigation }) => {
       >
         <Header />
         <Content>
+          <Button onPress={() => navigation.openDrawer()} iconLeft>
+            <Icon name="home" />
+            <Text>Open</Text>
+          </Button>
           <Card style={{ width: 500 }}>
             <CardItem header>
               <View>
