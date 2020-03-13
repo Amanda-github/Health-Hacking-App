@@ -1,14 +1,6 @@
 import React from "react";
-import { AppRegistry, Image, StatusBar, View } from "react-native";
-import {
-  Button,
-  Text,
-  Container,
-  List,
-  ListItem,
-  Content,
-  Icon
-} from "native-base";
+import { Image, View } from "react-native";
+import { Text, Container, List, ListItem, Content } from "native-base";
 
 const Routes = ["HomePage"];
 
