@@ -5,20 +5,17 @@ import {
   TouchableOpacity,
   TextInput,
   StyleSheet,
-  ImageBackground,
-  Linking
+  ImageBackground
 } from "react-native";
 
 import { Image } from "react-native-elements";
 import axios from "axios";
-import HomePage from "./HomePage";
-import SignUp from "./Signup";
 
+// const [login, setLogin] = useState(false);
 class Login extends Component {
   state = {
     username: "",
-    password: "",
-    setLogin: false
+    password: ""
   };
   handleUsername = text => {
     this.setState({ username: text });
@@ -45,8 +42,9 @@ class Login extends Component {
   };
 
   render() {
-    // if (this.state.setLogin)
-    // return<SignUp onPress=
+    // {
+    //   setLogin ? <HomePage /> : <SignUp />;
+    // }
     return (
       <ImageBackground
         source={require("./img/background.jpg")}
@@ -82,15 +80,22 @@ class Login extends Component {
           />
           <TouchableOpacity
             style={styles.submitButton}
-            onPress={() => this.setState({ setLogin: true })}
+            // onPress={() => this.setState({ setLogin: true })}
+            // onPress={this.props.onLoginPress}
+            onPress={() => this.props.navigation.navigate("HomeScreen")}
           >
             <Text style={styles.submitButtonText}> Log in </Text>
           </TouchableOpacity>
           <TouchableOpacity
             style={styles.submitButton}
-            onPress={() => this.setState({ setLogin: false })}
+            // onPress={this.props.onSignupPress}
           >
-            <Text style={styles.submitButtonText}>Sign Up</Text>
+            <Text
+              style={styles.submitButtonText}
+              onPress={() => this.props.navigation.navigate("SignUpScreen")}
+            >
+              Sign Up
+            </Text>
           </TouchableOpacity>
         </View>
       </ImageBackground>
