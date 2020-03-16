@@ -5,13 +5,13 @@ import {
   TouchableOpacity,
   TextInput,
   StyleSheet,
-  ImageBackground,
-  Linking
+  ImageBackground
 } from "react-native";
 
 import { Image } from "react-native-elements";
 import axios from "axios";
 
+// const [login, setLogin] = useState(false);
 class Login extends Component {
   state = {
     username: "",
@@ -42,6 +42,9 @@ class Login extends Component {
   };
 
   render() {
+    // {
+    //   setLogin ? <HomePage /> : <SignUp />;
+    // }
     return (
       <ImageBackground
         source={require("./img/background.jpg")}
@@ -75,19 +78,25 @@ class Login extends Component {
             autoCapitalize="none"
             onChangeText={this.handlePassword}
           />
-
           <TouchableOpacity
             style={styles.submitButton}
+            // onPress={() => this.setState({ setLogin: true })}
+            // onPress={this.props.onLoginPress}
             onPress={() => this.props.navigation.navigate("HomeScreen")}
           >
             <Text style={styles.submitButtonText}> Log in </Text>
           </TouchableOpacity>
-          <Text
-            style={{ color: "red", fontSize: 20 }}
-            onPress={() => this.props.navigation.navigate("SignUpScreen")}
+          <TouchableOpacity
+            style={styles.submitButton}
+            // onPress={this.props.onSignupPress}
           >
-            Sign Up
-          </Text>
+            <Text
+              style={styles.submitButtonText}
+              onPress={() => this.props.navigation.navigate("SignUpScreen")}
+            >
+              Sign Up
+            </Text>
+          </TouchableOpacity>
         </View>
       </ImageBackground>
     );

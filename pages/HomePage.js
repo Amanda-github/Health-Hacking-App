@@ -1,10 +1,8 @@
 import React from "react";
-
 import { Text, View, Image, TouchableHighlight, StyleSheet } from "react-native";
 import { Button, Icon } from "react-native-elements"
 import { addListener } from "expo/build/Updates/Updates";
 import { Left } from "native-base";
-
 
 const HomePage = ({ navigation }) => {
   return (
