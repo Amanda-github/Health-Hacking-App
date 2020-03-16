@@ -33,7 +33,7 @@ const HomePage = ({ navigation }) => {
           <Card style={{ width: "80%" }}>
             <CardItem header>
               <View>
-                <Text>Daily Activities</Text>
+                <Text>Your Recent Workout</Text>
               </View>
             </CardItem>
             <CardItem>
@@ -46,8 +46,13 @@ const HomePage = ({ navigation }) => {
             <CardItem footer>
               <View>
                 <Text>
-                  <Button transparent>
-                    <Icon name="arrow-forward" />
+                  <Button
+                    transparent
+                    style={styles.button}
+                    onPress={() => navigation.navigate("ActivityScreen")}
+                    iconLeft
+                  >
+                    <Text>Go</Text>
                   </Button>
                 </Text>
               </View>
@@ -94,6 +99,7 @@ const HomePage = ({ navigation }) => {
   );
 };
 export default HomePage;
+
 const styles = StyleSheet.create({
   button: {
     alignContent: "center",
