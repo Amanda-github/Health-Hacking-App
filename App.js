@@ -7,7 +7,8 @@ export default function App() {
   const [login, setLogin] = useState(true);
   return (
     <NavigationContainer>
-      {login ? <DrawerNavigator /> : <AuthenticationNavigator />}
+      {login ? <DrawerNavigator /> : <AuthenticationNavigator/>}
+
     </NavigationContainer>
   );
 }
