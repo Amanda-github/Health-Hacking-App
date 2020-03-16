@@ -4,10 +4,11 @@ import AuthenticationNavigator from "./navigators/StackNavigation";
 import DrawerNavigator from "./navigators/DrawerNavigation";
 
 export default function App() {
-  const [login, setLogin] = useState(false);
+  const [login, setLogin] = useState(true);
   return (
     <NavigationContainer>
-      {login ? <DrawerNavigator /> : <AuthenticationNavigator />}
+      {login ? <DrawerNavigator /> : <AuthenticationNavigator/>}
+
     </NavigationContainer>
   );
 }
