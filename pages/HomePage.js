@@ -1,4 +1,5 @@
 import React from "react";
+
 import { Text, View, Image, TouchableHighlight, StyleSheet } from "react-native";
 import { Button, Icon } from "react-native-elements"
 import { addListener } from "expo/build/Updates/Updates";
@@ -58,6 +59,7 @@ const HomePage = ({ navigation }) => {
           </View>
         </View>
       </View>
+
     </>
   );
 }
@@ -89,4 +91,5 @@ const styles = StyleSheet.create({
     width: 80,
     borderRadius: 64,
   },
+
 });
