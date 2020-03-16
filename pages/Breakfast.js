@@ -6,7 +6,7 @@ const BreakFast = () => {
   const [data, setData] = useState([]);
   useEffect(() => {
     axios
-      .get("http://192.168.1.52:5000/api/v1/meal/breakfast")
+      .get("https://team-4.herokuapp.com/api/v1/meal/breakfast")
       .then(result => {
         console.log(result.data);
         setData(result.data);
