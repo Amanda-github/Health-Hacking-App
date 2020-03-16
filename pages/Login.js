@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, useState } from "react";
 import {
   View,
   Text,
@@ -8,6 +8,7 @@ import {
   ImageBackground,
   Linking
 } from "react-native";
+
 import { Image } from "react-native-elements";
 import axios from "axios";
 
@@ -66,7 +67,6 @@ class Login extends Component {
             autoCapitalize="none"
             onChangeText={this.handleUsername}
           />
-
           <TextInput
             style={styles.input}
             underlineColorAndroid="transparent"
@@ -82,14 +82,11 @@ class Login extends Component {
           >
             <Text style={styles.submitButtonText}> Log in </Text>
           </TouchableOpacity>
-          <Text style={{ color: "white", paddingTop: 30 }}>
-            Sign Up Instead ??
-          </Text>
           <Text
             style={{ color: "red", fontSize: 20 }}
             onPress={() => this.props.navigation.navigate("SignUpScreen")}
           >
-            Click Here !!
+            Sign Up
           </Text>
         </View>
       </ImageBackground>
