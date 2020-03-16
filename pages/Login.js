@@ -11,11 +11,14 @@ import {
 
 import { Image } from "react-native-elements";
 import axios from "axios";
+import HomePage from "./HomePage";
+import SignUp from "./Signup";
 
 class Login extends Component {
   state = {
     username: "",
-    password: ""
+    password: "",
+    setLogin: false
   };
   handleUsername = text => {
     this.setState({ username: text });
@@ -42,6 +45,8 @@ class Login extends Component {
   };
 
   render() {
+    // if (this.state.setLogin)
+    // return<SignUp onPress=
     return (
       <ImageBackground
         source={require("./img/background.jpg")}
@@ -75,19 +80,18 @@ class Login extends Component {
             autoCapitalize="none"
             onChangeText={this.handlePassword}
           />
-
           <TouchableOpacity
             style={styles.submitButton}
-            onPress={() => this.props.navigation.navigate("HomeScreen")}
+            onPress={() => this.setState({ setLogin: true })}
           >
             <Text style={styles.submitButtonText}> Log in </Text>
           </TouchableOpacity>
-          <Text
-            style={{ color: "red", fontSize: 20 }}
-            onPress={() => this.props.navigation.navigate("SignUpScreen")}
+          <TouchableOpacity
+            style={styles.submitButton}
+            onPress={() => this.setState({ setLogin: false })}
           >
-            Sign Up
-          </Text>
+            <Text style={styles.submitButtonText}>Sign Up</Text>
+          </TouchableOpacity>
         </View>
       </ImageBackground>
     );

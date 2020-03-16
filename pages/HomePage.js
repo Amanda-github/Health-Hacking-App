@@ -10,7 +10,8 @@ import {
   Button,
   View
 } from "native-base";
-import { StyleSheet, Dimensions } from "react-native";
+import { StyleSheet } from "react-native";
+
 const HomePage = ({ navigation }) => {
   return (
     <>
@@ -19,7 +20,6 @@ const HomePage = ({ navigation }) => {
           flex: "center",
           alignItems: "center",
           justifyContent: "center",
-          // width:Dimensions.get('window').width
           width: "99%"
         }}
       >
