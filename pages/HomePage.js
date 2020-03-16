@@ -77,7 +77,6 @@ const HomePage = ({ navigation }) => {
             >
               <Icon name="home" />
               <Text style={{ paddingLeft: 200 }}>Lunch</Text>
-              <Text></Text>
             </Button>
             <Button
               style={styles.button}

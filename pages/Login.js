@@ -1,4 +1,5 @@
 import React, { Component, useState } from "react";
+import {AsyncStorage} from 'react-native';
 import {
   View,
   Text,
@@ -12,19 +13,14 @@ import {
 import { Image } from "react-native-elements";
 import axios from "axios";
 
-const Login = ({navigation}) => {
+const Login = ({navigation, setLogin}) => {
   const [username,setUsername] = useState('')
   const [password, setPassword] = useState('')
-  const display = (e) => {
-    console.log(e.target.value)
-  }
 
   const handleUsername = (e) => {
-    display(e)
     setUsername(e.target.value)
   }
   const handlePassword = (e) => {
-    display(e)
     setPassword(e.target.value)
   }
 
@@ -41,8 +37,9 @@ const Login = ({navigation}) => {
       .then(response => {
         console.log(response.data);
         if (response.data.status) {
-          localStorage.setItem('jwt', response.data.access_token)
-          navigation.navigate("LoginScreen")
+          // localStorage.setItem('jwt', response.data.access_token)
+          AsyncStorage.setItem('jwt', response.data.access_token)
+          setLogin(true)
         };
       })
       .catch(error => {
@@ -98,7 +95,6 @@ const Login = ({navigation}) => {
         </View>
       </ImageBackground>
     );
-  
 }
 
 export default Login;
