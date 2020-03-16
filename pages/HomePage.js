@@ -7,6 +7,81 @@ import { Left } from "native-base";
 const HomePage = ({ navigation }) => {
   return (
     <>
+<<<<<<< HEAD
+      <Container
+        style={{
+          flex: "center",
+          alignItems: "center",
+          justifyContent: "center",
+          // width:Dimensions.get('window').width
+          width: "99%"
+        }}
+      >
+        <View
+          style={{
+            flex: "center",
+            alignItems: "center",
+            justifyContent: "center"
+          }}
+        >
+          <Card style={{ width: "80%" }}>
+            <CardItem header>
+              <View>
+                <Text>Daily Activities</Text>
+              </View>
+            </CardItem>
+            <CardItem>
+              <Body>
+                <View>
+                  <Text>Put in activity icon</Text>
+                </View>
+              </Body>
+            </CardItem>
+            <CardItem footer>
+              <View>
+                <Text>
+                  <Button transparent>
+                    <Icon name="arrow-forward" />
+                  </Button>
+                </Text>
+              </View>
+            </CardItem>
+          </Card>
+          <Card
+            style={{
+              width: "80%",
+              alignContent: "center",
+              bottom: 30,
+              paddingTop: 50,
+              paddingLeft: 100
+            }}
+          >
+            <Button
+              style={styles.button}
+              onPress={() => navigation.navigate("BreakfastScreen")}
+              iconLeft
+            >
+              <Icon name="home" />
+              <Text>Breakfast</Text>
+            </Button>
+            <Button
+              style={styles.button}
+              onPress={() => navigation.navigate("LunchScreen")}
+              iconLeft
+            >
+              <Icon name="home" />
+              <Text style={{ paddingLeft: 200 }}>Lunch</Text>
+            </Button>
+            <Button
+              style={styles.button}
+              onPress={() => navigation.navigate("DinnerScreen")}
+              iconLeft
+            >
+              <Icon name="home" />
+              <Text>Dinner</Text>
+            </Button>
+          </Card>
+=======
       <View style={{ width: '100%' }}>
         <View style={{ backgroundColor: "#eee", borderRadius: 10, overflow: "hidden" }}>
           <View>
@@ -53,6 +128,7 @@ const HomePage = ({ navigation }) => {
               Breakfast
             </Text>
           </View>
+>>>>>>> be6145f613004f47995d2b9f0c3b148420abc8c2
         </View>
       </View>
 

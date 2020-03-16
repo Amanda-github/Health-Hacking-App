@@ -1,4 +1,5 @@
 import React, { Component, useState } from "react";
+import {AsyncStorage} from 'react-native';
 import {
   View,
   Text,
@@ -11,40 +12,39 @@ import {
 import { Image } from "react-native-elements";
 import axios from "axios";
 
-// const [login, setLogin] = useState(false);
-class Login extends Component {
-  state = {
-    username: "",
-    password: ""
-  };
-  handleUsername = text => {
-    this.setState({ username: text });
-  };
-  handlePassword = text => {
-    this.setState({ password: text });
-  };
-  login = (pass, username) => {
-    console.log("hello");
+const Login = ({navigation, setLogin}) => {
+  const [username,setUsername] = useState('')
+  const [password, setPassword] = useState('')
+
+  const handleUsername = (e) => {
+    setUsername(e.target.value)
+  }
+  const handlePassword = (e) => {
+    setPassword(e.target.value)
+  }
+
+  const login = () => {
+    console.log(username, password);
     axios({
       method: "POST",
       url: "https://team-4.herokuapp.com/api/v1/users/login",
       data: {
         username: username,
-        password: pass
+        password: password
       }
     })
       .then(response => {
-        console.log(response);
+        console.log(response.data);
+        if (response.data.status) {
+          // localStorage.setItem('jwt', response.data.access_token)
+          AsyncStorage.setItem('jwt', response.data.access_token)
+          setLogin(true)
+        };
       })
       .catch(error => {
-        console.error(error.response); // so that we know what went wrong if the request failed
+        console.log(error); 
       });
   };
-
-  render() {
-    // {
-    //   setLogin ? <HomePage /> : <SignUp />;
-    // }
     return (
       <ImageBackground
         source={require("./img/background.jpg")}
@@ -68,7 +68,7 @@ class Login extends Component {
             placeholder="Username"
             placeholderTextColor="#9a73ef"
             autoCapitalize="none"
-            onChangeText={this.handleUsername}
+            onChange={handleUsername}
           />
           <TextInput
             style={styles.input}
@@ -76,19 +76,17 @@ class Login extends Component {
             placeholder="Password"
             placeholderTextColor="#9a73ef"
             autoCapitalize="none"
-            onChangeText={this.handlePassword}
+            onChange={handlePassword}
           />
           <TouchableOpacity
             style={styles.submitButton}
-            // onPress={() => this.setState({ setLogin: true })}
-            // onPress={this.props.onLoginPress}
-            onPress={() => this.props.navigation.navigate("HomeScreen")}
+            onClick={login}
           >
             <Text style={styles.submitButtonText}> Log in </Text>
           </TouchableOpacity>
-          <TouchableOpacity
-            style={styles.submitButton}
-            // onPress={this.props.onSignupPress}
+          <Text
+            style={{ color: "red", fontSize: 20 }}
+            onPress={() => navigation.navigate("SignUpScreen")}
           >
             <Text
               style={styles.submitButtonText}
@@ -100,8 +98,8 @@ class Login extends Component {
         </View>
       </ImageBackground>
     );
-  }
 }
+
 export default Login;
 
 const styles = StyleSheet.create({
