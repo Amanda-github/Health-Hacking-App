@@ -6,6 +6,7 @@ import SignUp from "../pages/Signup";
 const Stack = createStackNavigator();
 
 const MainStack = () => {
+
   return (
     <>
       <Stack.Navigator initialRouteName="LoginScreen">

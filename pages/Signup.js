@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, {useState} from "react";
 import {
   View,
   Text,
@@ -10,32 +10,39 @@ import {
 import { Image } from "react-native-elements";
 import axios from "axios";
 
-class Signup extends Component {
-  state = {
-    username: "",
-    email: "",
-    password: ""
-  };
-  updateUser = user => {
-    this.setState({ user: user });
-  };
-  handleUsername = text => {
-    this.setState({ username: text });
-  };
-  handleEmail = text => {
-    this.setState({ email: text });
-  };
-  handlePassword = text => {
-    this.setState({ password: text });
-  };
-  login = (email, pass, username) => {
+const Signup = ({navigation}) => {
+
+  const [username,setUsername] = useState('')
+  const [email,setEmail] = useState('')
+  const [password, setPassword] = useState('')
+
+  const display = (e) => {
+    console.log(e.target.value)
+  }
+
+  const handleEmail = (e) => {
+    display(e)
+    setEmail(e.target.value)
+  }
+  const handleUsername = (e) => {
+    display(e)
+    setUsername(e.target.value)
+  }
+  const handlePassword = (e) => {
+    display(e)
+    setPassword(e.target.value)
+  }
+
+  const login = (e) => {
+    e.preventDefault()
+    console.log(username,password,email)
     axios({
       method: "POST",
-      url: "http://192.168.1.52:5000/api/v1/users/create",
+      url: "http://team-4.herokuapp.com/api/v1/users/create",
       data: {
         username: username,
         email: email,
-        password: pass
+        password: password
       }
     })
       .then(response => {
@@ -44,9 +51,11 @@ class Signup extends Component {
       .catch(error => {
         console.error(error.response); // so that we know what went wrong if the request failed
       });
-  };
-  render() {
-    return (
+  }
+ 
+    
+
+  return (
       <ImageBackground
         source={require("./img/background.jpg")}
         style={styles.background}
@@ -69,7 +78,7 @@ class Signup extends Component {
             placeholder="Username"
             placeholderTextColor="#9a73ef"
             autoCapitalize="none"
-            onChangeText={this.handleUsername}
+            onChange={handleUsername}
           />
 
           <TextInput
@@ -78,7 +87,7 @@ class Signup extends Component {
             placeholder="Email"
             placeholderTextColor="#9a73ef"
             autoCapitalize="none"
-            onChangeText={this.handleEmail}
+            onChange={handleEmail}
           />
 
           <TextInput
@@ -87,19 +96,26 @@ class Signup extends Component {
             placeholder="Password"
             placeholderTextColor="#9a73ef"
             autoCapitalize="none"
-            onChangeText={this.handlePassword}
+            type= 'password'
+            onChange={handlePassword}
           />
           <TouchableOpacity
             style={styles.submitButton}
-            onPress={() => this.props.navigation.navigate("HomeScreen")}
+            onClick={login}
           >
             <Text style={styles.submitButtonText}> Submit </Text>
           </TouchableOpacity>
+          <Text
+            style={{ color: "red", fontSize: 20 }}
+            onPress={() => navigation.navigate("LoginScreen")}
+          >
+            Log In
+          </Text>
         </View>
       </ImageBackground>
     );
-  }
 }
+
 export default Signup;
 
 const styles = StyleSheet.create({
