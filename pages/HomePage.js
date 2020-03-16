@@ -29,25 +29,23 @@ const HomePage = ({ navigation }) => {
             <Text style={{fontSize: 20}}>
               Enter Your Activities Below :-
             </Text>
-            <br/>
+           
             <Icon name='arrow-down' color='black' type='font-awesome'/>
-            <br/>
+          
             <View>
-              <Text>
               <Button
                 style={{borderRadius:100, width:140}}
                 raised
                 title='Activities Page' />
-              </Text>
             </View>
           </View>
           <View style={{ padding: 30, width: '100%' }}>
             <Text style={{ paddingTop: 5, fontSize: 20, textAlign: 'center'}}>
               Track Your Daily Meal Below :-
             </Text>
-            <br/>
+          
             <Icon name='arrow-down' color='black' type='font-awesome'/>
-            <br/>
+          
           </View>
           <View>
             <TouchableHighlight style={ styles.imageContainer }>
