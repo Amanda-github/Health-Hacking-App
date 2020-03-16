@@ -6,8 +6,7 @@ import {
   TouchableOpacity,
   TextInput,
   StyleSheet,
-  ImageBackground,
-  Linking
+  ImageBackground
 } from "react-native";
 
 import { Image } from "react-native-elements";
@@ -79,7 +78,6 @@ const Login = ({navigation, setLogin}) => {
             autoCapitalize="none"
             onChange={handlePassword}
           />
-
           <TouchableOpacity
             style={styles.submitButton}
             onClick={login}
@@ -90,8 +88,13 @@ const Login = ({navigation, setLogin}) => {
             style={{ color: "red", fontSize: 20 }}
             onPress={() => navigation.navigate("SignUpScreen")}
           >
-            Sign Up
-          </Text>
+            <Text
+              style={styles.submitButtonText}
+              onPress={() => this.props.navigation.navigate("SignUpScreen")}
+            >
+              Sign Up
+            </Text>
+          </TouchableOpacity>
         </View>
       </ImageBackground>
     );
