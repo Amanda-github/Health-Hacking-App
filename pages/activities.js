@@ -8,13 +8,14 @@ import {
   Text,
   Icon
 } from "native-base";
-import { Calendar, CalendarList } from "react-native-calendars";
+import "react-native-gesture-handler";
+// import { Calendar, CalendarList } from "react-native-calendars";
 
-const activities = () => {
+const activities = ({ navigation }) => {
   return (
     <Container style={{ margin: 20 }}>
       <Content>
-        <Card>
+        {/* <Card>
           <CalendarList
             horizontal={true}
             pagingEnabled={true}
@@ -57,31 +58,35 @@ const activities = () => {
               showWeekNumbers={false}
             />
           </CalendarList>
-        </Card>
+        </Card> */}
         <Card>
           <Content>
-            <Button block light>
+            <Button
+              onPress={() => navigation.navigate("RunningScreen")}
+              block
+              bordered
+            >
               <Text>Running</Text>
             </Button>
-            <Button block light>
+            <Button block bordered info>
               <Text>Walking</Text>
             </Button>
-            <Button block light>
+            <Button block bordered>
               <Text>Cycling</Text>
             </Button>
-            <Button block light>
+            <Button block bordered info>
               <Text>Swimming</Text>
             </Button>
-            <Button block light>
+            <Button block bordered>
               <Text>Hiking</Text>
             </Button>
-            <Button block light>
+            <Button block bordered info>
               <Text>Treadmill</Text>
             </Button>
-            <Button block light>
+            <Button block bordered>
               <Text>Weight Machines</Text>
             </Button>
-            <Button block light>
+            <Button block bordered info>
               <Text>Circuit Training</Text>
             </Button>
           </Content>
