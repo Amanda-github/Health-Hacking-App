@@ -1,5 +1,5 @@
 import React, { Component, useState } from "react";
-import {AsyncStorage} from 'react-native';
+import { AsyncStorage } from "react-native";
 import {
   View,
   Text,
@@ -12,16 +12,16 @@ import {
 import { Image } from "react-native-elements";
 import axios from "axios";
 
-const Login = ({navigation, setLogin}) => {
-  const [username,setUsername] = useState('')
-  const [password, setPassword] = useState('')
+const Login = ({ navigation, setLogin }) => {
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
 
-  const handleUsername = (e) => {
-    setUsername(e.target.value)
-  }
-  const handlePassword = (e) => {
-    setPassword(e.target.value)
-  }
+  const handleUsername = e => {
+    setUsername(e.target.value);
+  };
+  const handlePassword = e => {
+    setPassword(e.target.value);
+  };
 
   const login = () => {
     console.log(username, password);
@@ -37,68 +37,62 @@ const Login = ({navigation, setLogin}) => {
         console.log(response.data);
         if (response.data.status) {
           // localStorage.setItem('jwt', response.data.access_token)
-          AsyncStorage.setItem('jwt', response.data.access_token)
-          setLogin(true)
-        };
+          AsyncStorage.setItem("jwt", response.data.access_token);
+          setLogin(true);
+        }
       })
       .catch(error => {
-        console.log(error); 
+        console.log(error);
       });
   };
-    return (
-      <ImageBackground
-        source={require("./img/background.jpg")}
-        style={styles.background}
-      >
-        <View style={styles.container}>
-          <View
-            style={{
-              justifyContent: "center",
-              alignItems: "center"
-            }}
-          >
-            <Image
-              source={require("./img/Logo.png")}
-              style={{ width: 200, height: 200 }}
-            />
-          </View>
-          <TextInput
-            style={styles.input}
-            underlineColorAndroid="transparent"
-            placeholder="Username"
-            placeholderTextColor="#9a73ef"
-            autoCapitalize="none"
-            onChange={handleUsername}
+  return (
+    <ImageBackground
+      source={require("./img/background.jpg")}
+      style={styles.background}
+    >
+      <View style={styles.container}>
+        <View
+          style={{
+            justifyContent: "center",
+            alignItems: "center"
+          }}
+        >
+          <Image
+            source={require("./img/Logo.png")}
+            style={{ width: 200, height: 200 }}
           />
-          <TextInput
-            style={styles.input}
-            underlineColorAndroid="transparent"
-            placeholder="Password"
-            placeholderTextColor="#9a73ef"
-            autoCapitalize="none"
-            onChange={handlePassword}
-          />
-          <TouchableOpacity
-            style={styles.submitButton}
-            onClick={login}
-          >
-            <Text style={styles.submitButtonText}> Log in </Text>
-          </TouchableOpacity>
+        </View>
+        <TextInput
+          style={styles.input}
+          underlineColorAndroid="transparent"
+          placeholder="Username"
+          placeholderTextColor="#9a73ef"
+          autoCapitalize="none"
+          onChange={handleUsername}
+        />
+        <TextInput
+          style={styles.input}
+          underlineColorAndroid="transparent"
+          placeholder="Password"
+          placeholderTextColor="#9a73ef"
+          autoCapitalize="none"
+          onChange={handlePassword}
+        />
+        <TouchableOpacity style={styles.submitButton} onClick={login}>
+          <Text style={styles.submitButtonText}> Log in </Text>
+        </TouchableOpacity>
+        <TouchableOpacity>
           <Text
             style={{ color: "red", fontSize: 20 }}
             onPress={() => navigation.navigate("SignUpScreen")}
           >
-            <Text
-              style={styles.submitButtonText}
-              onPress={() => this.props.navigation.navigate("SignUpScreen")}
-            >
-              Sign Up
-            </Text>
-          </TouchableOpacity>
-        </View>
-      </ImageBackground>
-    );
-}
+            Sign Up
+          </Text>
+        </TouchableOpacity>
+      </View>
+    </ImageBackground>
+  );
+};
 
 export default Login;
 
