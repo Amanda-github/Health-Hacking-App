@@ -78,20 +78,17 @@ const Login = ({navigation, setLogin}) => {
             autoCapitalize="none"
             onChange={handlePassword}
           />
-          <TouchableOpacity
+          <TouchableOpacity>
             style={styles.submitButton}
             onClick={login}
           >
             <Text style={styles.submitButtonText}> Log in </Text>
           </TouchableOpacity>
+          <TouchableOpacity>
           <Text
             style={{ color: "red", fontSize: 20 }}
             onPress={() => navigation.navigate("SignUpScreen")}
           >
-            <Text
-              style={styles.submitButtonText}
-              onPress={() => this.props.navigation.navigate("SignUpScreen")}
-            >
               Sign Up
             </Text>
           </TouchableOpacity>
