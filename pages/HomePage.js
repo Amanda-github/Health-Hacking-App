@@ -9,6 +9,7 @@ import {
 import { Button, Icon } from "react-native-elements";
 import { addListener } from "expo/build/Updates/Updates";
 import { Left } from "native-base";
+import "react-native-gesture-handler";
 
 const HomePage = ({ navigation }) => {
   return (
@@ -56,6 +57,7 @@ const HomePage = ({ navigation }) => {
 
             <View>
               <Button
+                onPress={() => navigation.navigate("ActivityScreen")}
                 style={{ borderRadius: 100, width: 140 }}
                 raised
                 title="Activities Page"
