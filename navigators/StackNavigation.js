@@ -2,6 +2,7 @@ import React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
 import Login from "../pages/Login";
 import SignUp from "../pages/Signup";
+import Running from "../activities_screen/Running";
 
 const Stack = createStackNavigator();
 
