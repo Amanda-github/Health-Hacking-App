@@ -5,6 +5,7 @@ import Breakfast from "../pages/Breakfast";
 import Lunch from "../pages/Lunch";
 import Dinner from "../pages/Dinner";
 import Activities from "../pages/activities";
+import Running from "../activities_screen/Running";
 import { createDrawerNavigator } from "@react-navigation/drawer";
 
 const Drawer = createDrawerNavigator();
@@ -47,6 +48,11 @@ const TabNavigation = () => {
         name="ActivityScreen"
         component={Activities}
         options={{ title: "Activities" }}
+      />
+      <Drawer.Screen
+        name="RunningScreen"
+        component={Running}
+        options={{ title: "Running" }}
       />
     </Drawer.Navigator>
   );
