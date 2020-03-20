@@ -14,6 +14,15 @@ const Breakfast = ({ navigation }) => {
           >
             <Text>Egg</Text>
           </Button>
+          <Button block bordered>
+            <Text>Coffee</Text>
+          </Button>
+          <Button block bordered>
+            <Text>Wholemeal Bread</Text>
+          </Button>
+          <Button block bordered>
+            <Text>Rolled Oats</Text>
+          </Button>
         </Card>
       </Content>
     </Container>
