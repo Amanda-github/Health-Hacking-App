@@ -1,25 +1,57 @@
 import React, { useEffect, useState } from "react";
-import RNPickerSelect from "react-native-picker-select";
-import axios from "axios";
+import { Container, Content, Card, Button, Text } from "native-base";
+import { BrowserRouter, Link } from "react-router-dom";
 
-const BreakFast = () => {
-  const [data, setData] = useState([]);
-  useEffect(() => {
-    axios
-      .get("https://team-4.herokuapp.com/api/v1/meal/breakfast")
-      .then(result => {
-        console.log(result.data);
-        setData(result.data);
-      })
-      .catch(error => {
-        console.log("ERROR: ", error);
-      });
-  }, []);
-  console.log(data);
-
+const Breakfast = ({ navigation }) => {
   return (
-    <RNPickerSelect onValueChange={value => console.log(value)} items={data} />
+    <Container>
+      <Content>
+        <Card>
+          <Button
+            block
+            bordered
+            onPress={() => navigation.navigate("EggScreen")}
+          >
+            <Text>Egg</Text>
+          </Button>
+          <Button block bordered>
+            <Text>Coffee</Text>
+          </Button>
+          <Button block bordered>
+            <Text>Wholemeal Bread</Text>
+          </Button>
+          <Button block bordered>
+            <Text>Rolled Oats</Text>
+          </Button>
+        </Card>
+      </Content>
+    </Container>
   );
 };
 
-export default BreakFast;
+export default Breakfast;
+
+// import RNPickerSelect from "react-native-picker-select";
+// import axios from "axios";
+
+// const BreakFast = () => {
+//   const [data, setData] = useState([]);
+//   useEffect(() => {
+//     axios
+//       .get("https://team-4.herokuapp.com/api/v1/meal/breakfast")
+//       .then(result => {
+//         console.log(result.data);
+//         setData(result.data);
+//       })
+//       .catch(error => {
+//         console.log("ERROR: ", error);
+//       });
+//   }, []);
+//   console.log(data);
+
+//   return (
+//     <RNPickerSelect onValueChange={value => console.log(value)} items={data} />
+//   );
+// };
+
+// export default BreakFast;
