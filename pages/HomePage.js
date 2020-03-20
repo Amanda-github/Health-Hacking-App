@@ -67,24 +67,19 @@ const HomePage = ({ navigation }) => {
             <Text style={{ paddingTop: 5, fontSize: 20, textAlign: "center" }}>
               Track Your Daily Meal Below :-
             </Text>
-
             <Icon name="arrow-down" color="black" type="font-awesome" />
           </View>
           <View>
-            <BrowserRouter>
-              <Link to="/breakfast">
-                <TouchableHighlight
-                  style={styles.imageContainer}
-                  // onPress={() => navigation.navigate("BreakfastScreen")}
-                >
-                  <Image
-                    style={styles.image}
-                    source={require("./img/breakfast.png")}
-                  />
-                </TouchableHighlight>
-                <Text>Breakfast</Text>
-              </Link>
-            </BrowserRouter>
+            <TouchableHighlight
+              style={styles.imageContainer}
+              onPress={() => navigation.navigate("BreakfastScreen")}
+            >
+              <Image
+                style={styles.image}
+                source={require("./img/breakfast.png")}
+              />
+            </TouchableHighlight>
+            <Text>Breakfast</Text>
           </View>
         </View>
       </View>

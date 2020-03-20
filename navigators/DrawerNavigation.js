@@ -30,12 +30,12 @@ const TabNavigation = () => {
         component={Profile}
         options={{ title: "My Profile" }}
       />
-      {/* <Drawer.Screen
+      <Drawer.Screen
         name="BreakfastScreen"
         component={Breakfast}
         options={{ title: "Breakfast" }}
         style={{ color: "transparent" }}
-      /> */}
+      />
       <Drawer.Screen
         name="LunchScreen"
         component={Lunch}
@@ -56,11 +56,11 @@ const TabNavigation = () => {
         component={Running}
         options={{ title: "Running" }}
       />
-      {/* <Drawer.Screen
+      <Drawer.Screen
         name="EggScreen"
         component={Egg}
         options={{ title: "Egg" }}
-      /> */}
+      />
     </Drawer.Navigator>
   );
 };

@@ -16,18 +16,7 @@ export default function App() {
       <NavigationContainer>
         {login ? (
           <>
-            <DrawerNavigator />
-            <BrowserRouter>
-              <Switch>
-                <Route exact path="/breakfast">
-                  <Breakfast />
-                </Route>
-                <Route exact path="/breakfast/eggs">
-                  <Egg />
-                </Route>
-              </Switch>
-            </BrowserRouter>
-            ;
+            <DrawerNavigator />;
           </>
         ) : (
           <AuthenticationNavigator />
@@ -36,3 +25,33 @@ export default function App() {
     </>
   );
 }
+
+// {
+//   /* <BrowserRouter>
+//               <Switch>
+//                 <Route exact path="/breakfast">
+//                   <Breakfast />
+//                 </Route>
+//                 <Route exact path="/breakfast/eggs">
+//                   <Egg />
+//                 </Route>
+//               </Switch>
+//             </BrowserRouter> */
+// }
+
+// {
+//   /* <BrowserRouter>
+//               <Link to="/breakfast">
+//                 <TouchableHighlight
+//                   style={styles.imageContainer}
+//                   // onPress={() => navigation.navigate("BreakfastScreen")}
+//                 >
+//                   <Image
+//                     style={styles.image}
+//                     source={require("./img/breakfast.png")}
+//                   />
+//                 </TouchableHighlight>
+//                 <Text>Breakfast</Text>
+//               </Link>
+//             </BrowserRouter> */
+// }

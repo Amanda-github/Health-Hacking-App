@@ -10,7 +10,7 @@ const Breakfast = ({ navigation }) => {
           <Button
             block
             bordered
-            onPress={() => navigation.navigate("EggScreen")}
+            // onPress={() => navigation.navigate("EggScreen")}
           >
             <Text>Egg</Text>
           </Button>
