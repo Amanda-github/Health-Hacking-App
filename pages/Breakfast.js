@@ -12,15 +12,27 @@ const Breakfast = ({ navigation }) => {
             bordered
             onPress={() => navigation.navigate("EggScreen")}
           >
-            <Text>Egg</Text>
+            <Text>Hard Boiled Egg</Text>
           </Button>
-          <Button block bordered>
+          <Button
+            block
+            bordered
+            onPress={() => navigation.navigate("CoffeeScreen")}
+          >
             <Text>Coffee</Text>
           </Button>
-          <Button block bordered>
+          <Button
+            block
+            bordered
+            onPress={() => navigation.navigate("WholeMealBreadScreen")}
+          >
             <Text>Wholemeal Bread</Text>
           </Button>
-          <Button block bordered>
+          <Button
+            block
+            bordered
+            onPress={() => navigation.navigate("RolledOatsScreen")}
+          >
             <Text>Rolled Oats</Text>
           </Button>
         </Card>

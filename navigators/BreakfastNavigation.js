@@ -28,7 +28,7 @@ const BreakfastNavigator = () => {
         options={{ title: "RolledOats" }}
       />
       <Stack.Screen
-        name="WholeMealBread"
+        name="WholeMealBreadScreen"
         component={WholeMealBread}
         options={{ title: "WholeMealBread" }}
       />
