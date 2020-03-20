@@ -9,6 +9,7 @@ import {
 import { Button, Icon } from "react-native-elements";
 import { addListener } from "expo/build/Updates/Updates";
 import { Left } from "native-base";
+import { BrowserRouter, Link, useHistory } from "react-router-dom";
 import "react-native-gesture-handler";
 
 const HomePage = ({ navigation }) => {
@@ -52,9 +53,7 @@ const HomePage = ({ navigation }) => {
             }}
           >
             <Text style={{ fontSize: 20 }}>Enter Your Activities Below :-</Text>
-
             <Icon name="arrow-down" color="black" type="font-awesome" />
-
             <View>
               <Button
                 onPress={() => navigation.navigate("ActivityScreen")}
@@ -72,13 +71,20 @@ const HomePage = ({ navigation }) => {
             <Icon name="arrow-down" color="black" type="font-awesome" />
           </View>
           <View>
-            <TouchableHighlight style={styles.imageContainer}>
-              <Image
-                style={styles.image}
-                source={require("./img/breakfast.png")}
-              />
-            </TouchableHighlight>
-            <Text>Breakfast</Text>
+            <BrowserRouter>
+              <Link to="/breakfast">
+                <TouchableHighlight
+                  style={styles.imageContainer}
+                  // onPress={() => navigation.navigate("BreakfastScreen")}
+                >
+                  <Image
+                    style={styles.image}
+                    source={require("./img/breakfast.png")}
+                  />
+                </TouchableHighlight>
+                <Text>Breakfast</Text>
+              </Link>
+            </BrowserRouter>
           </View>
         </View>
       </View>

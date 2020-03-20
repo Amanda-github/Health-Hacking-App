@@ -1,15 +1,29 @@
 import React, { useEffect, useState } from "react";
-import {
-  Container,
-  Content,
-  Card,
-  Header,
-  Button,
-  Text,
-  Icon
-} from "native-base";
-import RNPickerSelect from "react-native-picker-select";
-import axios from "axios";
+import { Container, Content, Card, Button, Text } from "native-base";
+import { BrowserRouter, Link } from "react-router-dom";
+
+const Breakfast = ({ navigation }) => {
+  return (
+    <Container>
+      <Content>
+        <Card>
+          <Button
+            block
+            bordered
+            onPress={() => navigation.navigate("EggScreen")}
+          >
+            <Text>Egg</Text>
+          </Button>
+        </Card>
+      </Content>
+    </Container>
+  );
+};
+
+export default Breakfast;
+
+// import RNPickerSelect from "react-native-picker-select";
+// import axios from "axios";
 
 // const BreakFast = () => {
 //   const [data, setData] = useState([]);
@@ -32,19 +46,3 @@ import axios from "axios";
 // };
 
 // export default BreakFast;
-
-const BreakFast = () => {
-  return (
-    <Container>
-      <Content>
-        <Card>
-          <Button block bordered>
-            <Text>Hello</Text>
-          </Button>
-        </Card>
-      </Content>
-    </Container>
-  );
-};
-
-export default BreakFast;
