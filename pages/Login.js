@@ -60,8 +60,7 @@ const Login = ({ navigation, setLogin }) => {
           <Image
             source={require("./img/Logo.png")}
             style={{ width: 200, height: 200 }}
-          />
-        </View>
+          /> </View>
         <TextInput
           style={styles.input}
           underlineColorAndroid="transparent"
@@ -86,13 +85,14 @@ const Login = ({ navigation, setLogin }) => {
             style={{ color: "red", fontSize: 20 }}
             onPress={() => navigation.navigate("SignUpScreen")}
           >
-            Sign Up
-          </Text>
-        </TouchableOpacity>
-      </View>
-    </ImageBackground>
-  );
-};
+              Sign Up
+            </Text>
+          </TouchableOpacity>
+        </View>
+      </ImageBackground>
+    );
+}
+
 
 export default Login;
 
