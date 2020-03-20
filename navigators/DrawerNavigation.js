@@ -6,6 +6,7 @@ import Lunch from "../pages/Lunch";
 import Dinner from "../pages/Dinner";
 import Activities from "../pages/activities";
 import Running from "../activities_screen/Running";
+import Egg from "../breakfast_screen/Egg";
 import { createDrawerNavigator } from "@react-navigation/drawer";
 
 const Drawer = createDrawerNavigator();
@@ -29,11 +30,12 @@ const TabNavigation = () => {
         component={Profile}
         options={{ title: "My Profile" }}
       />
-      <Drawer.Screen
+      {/* <Drawer.Screen
         name="BreakfastScreen"
         component={Breakfast}
         options={{ title: "Breakfast" }}
-      />
+        style={{ color: "transparent" }}
+      /> */}
       <Drawer.Screen
         name="LunchScreen"
         component={Lunch}
@@ -54,6 +56,11 @@ const TabNavigation = () => {
         component={Running}
         options={{ title: "Running" }}
       />
+      {/* <Drawer.Screen
+        name="EggScreen"
+        component={Egg}
+        options={{ title: "Egg" }}
+      /> */}
     </Drawer.Navigator>
   );
 };
