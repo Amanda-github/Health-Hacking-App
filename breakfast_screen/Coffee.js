@@ -2,7 +2,7 @@ import React from "react";
 import { RNPickerSelect } from "react-native-picker-select";
 import { Container, Content, Card, Button, Text, View } from "native-base";
 
-const Egg = () => {
+const Coffee = () => {
   return (
     <Container>
       <Card>
@@ -25,4 +25,4 @@ const Egg = () => {
   );
 };
 
-export default Egg;
+export default Coffee;
