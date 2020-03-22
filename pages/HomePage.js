@@ -7,72 +7,83 @@ import {
   StyleSheet
 } from "react-native";
 import { Button, Icon } from "react-native-elements";
-import { addListener } from "expo/build/Updates/Updates";
-import { Left } from "native-base";
-import { BrowserRouter, Link, useHistory } from "react-router-dom";
 import "react-native-gesture-handler";
 
 const HomePage = ({ navigation }) => {
   return (
     <>
-      <View style={{ backgroundColor: "#eee", borderRadius: 10, overflow: "hidden" }}>
-        <View style={{borderWidth:1,borderColor:'black', padding: 20 }}>
-        <Text style={{textAlign:'center'}}>
-            Date & Time !
-          </Text>
+      <View
+        style={{
+          backgroundColor: "#eee",
+          borderRadius: 10,
+          overflow: "hidden"
+        }}
+      >
+        <View style={{ borderWidth: 1, borderColor: "black", padding: 20 }}>
+          <Text style={{ textAlign: "center" }}>Date & Time !</Text>
         </View>
-        <View style={{borderWidth: 1, borderColor:'black'}}>
-          <Text style={{textAlign: 'center', paddingTop: 80}}>
+        <View style={{ borderWidth: 1, borderColor: "black" }}>
+          <Text style={{ textAlign: "center", paddingTop: 80 }}>
             Summary Here !
           </Text>
-          <View style={{alignItems: 'center', top:78}}>
-              <Button
-                style={{borderRadius:100, width:140}}
-                title='Activities Page' 
-                />
-                  <Image style={styles.running} source={require('./img/running.png')} />
+          <View style={{ alignItems: "center", top: 78 }}>
+            <Button
+              style={{ borderRadius: 100, width: 140 }}
+              title="Activities Page"
+              onPress={() => navigation.navigate("ActivityScreen")}
+            />
+            <Image
+              style={styles.running}
+              source={require("./img/running.png")}
+            />
           </View>
         </View>
-        <View style={{ padding: 40, width: '100%' }}>
-          <Text style={{ paddingBottom: 20, fontSize: 20, textAlign: 'center'}}>
+        <View style={{ padding: 40, width: "100%" }}>
+          <Text
+            style={{ paddingBottom: 20, fontSize: 20, textAlign: "center" }}
+          >
             Track Your Daily Meal Below :-
           </Text>
-          <Icon name='arrow-down' color='black' type='font-awesome'/>
+          <Icon name="arrow-down" color="black" type="font-awesome" />
         </View>
         <View style={styles.breakfast}>
-          <TouchableHighlight style={ styles.imageContainer }onPress={() => navigation.navigate("BreakfastScreen")}>
-            <Image style={ styles.image } source={require('./img/breakfast.png')}/>
+          <TouchableHighlight
+            style={styles.imageContainer}
+            onPress={() => navigation.navigate("BreakfastScreen")}
+          >
+            <Image
+              style={styles.image}
+              source={require("./img/breakfast.png")}
+            />
           </TouchableHighlight>
         </View>
         <View style={styles.lunch}>
-          <TouchableHighlight style={ styles.imageContainer }onPress={() => navigation.navigate("LunchScreen")}>
-            <Image style={ styles.image } source={require('./img/lunch.png')}/>
+          <TouchableHighlight
+            style={styles.imageContainer}
+            onPress={() => navigation.navigate("LunchScreen")}
+          >
+            <Image style={styles.image} source={require("./img/lunch.png")} />
           </TouchableHighlight>
         </View>
         <View style={styles.dinner}>
-          <TouchableHighlight style={ styles.imageContainer } onPress={() => navigation.navigate("DinnerScreen")}>
-            <Image style={ styles.image } source={require('./img/dinner.png')}/>
+          <TouchableHighlight
+            style={styles.imageContainer}
+            onPress={() => navigation.navigate("DinnerScreen")}
+          >
+            <Image style={styles.image} source={require("./img/dinner.png")} />
           </TouchableHighlight>
         </View>
         <View style={styles.breakfastword}>
-          <Text style={{textAlign: 'center'}}>
-            Breakfast
-          </Text>
+          <Text style={{ textAlign: "center" }}>Breakfast</Text>
         </View>
         <View style={styles.lunchword}>
-          <Text style={{textAlign: 'center'}}>
-            Lunch
-          </Text>
+          <Text style={{ textAlign: "center" }}>Lunch</Text>
         </View>
         <View style={styles.dinnerword}>
-          <Text style={{textAlign: 'center'}}>
-            Dinner
-          </Text>
+          <Text style={{ textAlign: "center" }}>Dinner</Text>
         </View>
         <View style={styles.medication}>
-          <Text style={{textAlign: 'center'}}>
-          Medication Reminder
-          </Text>
+          <Text style={{ textAlign: "center" }}>Medication Reminder</Text>
         </View>
       </View>
     </>
@@ -82,7 +93,7 @@ const HomePage = ({ navigation }) => {
 export default HomePage;
 
 const styles = StyleSheet.create({
-  imageContainer:{
+  imageContainer: {
     left: 8
   },
   imageContainer3: {
@@ -94,62 +105,62 @@ const styles = StyleSheet.create({
   },
   image: {
     height: 80,
-    borderRadius: 64,
+    borderRadius: 64
   },
-  summary:{
+  summary: {
     paddingTop: 100
-  },  
-  breakfast:{
+  },
+  breakfast: {
     borderWidth: 2,
-    borderColor: 'black',
+    borderColor: "black",
     width: 100,
     left: 10
   },
-  lunch:{
+  lunch: {
     borderWidth: 2,
-    borderColor: 'black',
+    borderColor: "black",
     width: 100,
     left: 150,
     bottom: 83
   },
-  dinner:{
+  dinner: {
     borderWidth: 2,
-    borderColor: 'black',
+    borderColor: "black",
     width: 100,
     left: 300,
     bottom: 167
   },
-  running:{
+  running: {
     height: 80,
     width: 80,
     left: 100,
     bottom: 60
   },
-  breakfastword:{
+  breakfastword: {
     borderWidth: 1,
-    borderColor:'black',
-    bottom:160, 
-    width: 100, 
+    borderColor: "black",
+    bottom: 160,
+    width: 100,
     left: 10
   },
-  lunchword:{
+  lunchword: {
     borderWidth: 1,
-    borderColor:'black',
-    bottom:181, 
-    width: 100, 
+    borderColor: "black",
+    bottom: 181,
+    width: 100,
     left: 150
   },
-  dinnerword:{
+  dinnerword: {
     borderWidth: 1,
-    borderColor:'black',
-    bottom:200, 
-    width: 100, 
+    borderColor: "black",
+    bottom: 200,
+    width: 100,
     left: 300
   },
-  medication:{
+  medication: {
     bottom: 100,
     borderWidth: 1,
-    borderColor: 'black',
+    borderColor: "black",
     height: 100,
     bottom: 180
   }

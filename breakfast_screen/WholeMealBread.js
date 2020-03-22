@@ -8,14 +8,16 @@ const WholeMealBread = () => {
       <Card>
         <Content>
           <View>
-            <Text>
-              Nutrition Facts:
-              {"\n"}
-              Amount per slice: 29g
-              {"\n"}
-              Calories: 78kcal
-              {"\n"}
-              {"\n"}
+            <Text style={{ color: "darkblue" }}>
+              <h2>
+                Nutrition Facts:
+                {"\n"}
+                Amount per slice: 29g
+                {"\n"}
+                Calories: 78kcal
+                {"\n"}
+                {"\n"}
+              </h2>
             </Text>
           </View>
         </Content>
@@ -25,6 +27,8 @@ const WholeMealBread = () => {
           <View>
             <Text> Quantity:</Text>
             <RNPickerSelect
+              placeholderTextColor="darkblue"
+              placeholder={{ label: "Select an option", value: "null" }}
               onValueChange={value => console.log(value)}
               items={[
                 { label: "1 slice", value: "1" },
@@ -37,7 +41,11 @@ const WholeMealBread = () => {
         </Content>
       </Card>
       <Card>
-        <Content></Content>
+        <Content>
+          <View>
+            <Text></Text>
+          </View>
+        </Content>
       </Card>
     </Container>
   );

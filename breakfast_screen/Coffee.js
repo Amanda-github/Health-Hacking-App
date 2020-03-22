@@ -1,5 +1,5 @@
 import React from "react";
-import { RNPickerSelect } from "react-native-picker-select";
+import RNPickerSelect from "react-native-picker-select";
 import { Container, Content, Card, Button, Text, View } from "native-base";
 
 const Coffee = () => {
@@ -8,7 +8,7 @@ const Coffee = () => {
       <Card>
         <Content>
           <View>
-            <Text>Please Enter your input unit:</Text>
+            <Text>Cups:</Text>
             <RNPickerSelect
               onValueChange={value => console.log(value)}
               items={[
