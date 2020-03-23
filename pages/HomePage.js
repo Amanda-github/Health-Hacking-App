@@ -10,6 +10,11 @@ import { Button, Icon } from "react-native-elements";
 import "react-native-gesture-handler";
 
 const HomePage = ({ navigation }) => {
+  const date = new Date().getDate();
+  const month = new Date().getMonth() + 1;
+  const year = new Date().getFullYear();
+  const Day = date + "-" + month + "-" + year;
+
   return (
     <>
       <View
@@ -20,7 +25,10 @@ const HomePage = ({ navigation }) => {
         }}
       >
         <View style={{ borderWidth: 1, borderColor: "black", padding: 20 }}>
-          <Text style={{ textAlign: "center" }}>Date & Time !</Text>
+          <Text style={{ textAlign: "center" }}>
+            <b>Today</b>
+          </Text>
+          <Text style={{ textAlign: "center" }}>{Day}</Text>
         </View>
         <View style={{ borderWidth: 1, borderColor: "black" }}>
           <Text style={{ textAlign: "center", paddingTop: 80 }}>

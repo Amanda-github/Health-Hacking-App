@@ -43,7 +43,7 @@ const WholeMealBread = () => {
       <Card>
         <Content>
           <View>
-            <Text></Text>
+            <Text>Total Calories Consumed:</Text>
           </View>
         </Content>
       </Card>
