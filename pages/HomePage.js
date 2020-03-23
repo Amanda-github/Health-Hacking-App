@@ -54,41 +54,52 @@ const HomePage = ({ navigation }) => {
           </Text>
           <Icon name="arrow-down" color="black" type="font-awesome" />
         </View>
-        <View style={styles.breakfast}>
-          <TouchableHighlight
-            style={styles.imageContainer}
-            onPress={() => navigation.navigate("BreakfastScreen")}
-          >
-            <Image
-              style={styles.image}
-              source={require("./img/breakfast.png")}
-            />
-          </TouchableHighlight>
-        </View>
-        <View style={styles.lunch}>
-          <TouchableHighlight
-            style={styles.imageContainer}
-            onPress={() => navigation.navigate("LunchScreen")}
-          >
-            <Image style={styles.image} source={require("./img/lunch.png")} />
-          </TouchableHighlight>
-        </View>
-        <View style={styles.dinner}>
-          <TouchableHighlight
-            style={styles.imageContainer}
-            onPress={() => navigation.navigate("DinnerScreen")}
-          >
-            <Image style={styles.image} source={require("./img/dinner.png")} />
-          </TouchableHighlight>
-        </View>
-        <View style={styles.breakfastword}>
-          <Text style={{ textAlign: "center" }}>Breakfast</Text>
-        </View>
-        <View style={styles.lunchword}>
-          <Text style={{ textAlign: "center" }}>Lunch</Text>
-        </View>
-        <View style={styles.dinnerword}>
-          <Text style={{ textAlign: "center" }}>Dinner</Text>
+        <View
+          style={{
+            alignContent: "center",
+            alignItems: "center",
+            alignSelf: "center"
+          }}
+        >
+          <View style={styles.breakfast}>
+            <TouchableHighlight
+              style={styles.imageContainer}
+              onPress={() => navigation.navigate("BreakfastScreen")}
+            >
+              <Image
+                style={styles.image}
+                source={require("./img/breakfast.png")}
+              />
+            </TouchableHighlight>
+          </View>
+          <View style={styles.lunch}>
+            <TouchableHighlight
+              style={styles.imageContainer}
+              onPress={() => navigation.navigate("LunchScreen")}
+            >
+              <Image style={styles.image} source={require("./img/lunch.png")} />
+            </TouchableHighlight>
+          </View>
+          <View style={styles.dinner}>
+            <TouchableHighlight
+              style={styles.imageContainer}
+              onPress={() => navigation.navigate("DinnerScreen")}
+            >
+              <Image
+                style={styles.image}
+                source={require("./img/dinner.png")}
+              />
+            </TouchableHighlight>
+          </View>
+          <View style={styles.breakfastword}>
+            <Text style={{ textAlign: "center" }}>Breakfast</Text>
+          </View>
+          <View style={styles.lunchword}>
+            <Text style={{ textAlign: "center" }}>Lunch</Text>
+          </View>
+          <View style={styles.dinnerword}>
+            <Text style={{ textAlign: "center" }}>Dinner</Text>
+          </View>
         </View>
         <View style={styles.medication}>
           <Text style={{ textAlign: "center" }}>Medication Reminder</Text>
@@ -101,16 +112,7 @@ const HomePage = ({ navigation }) => {
 export default HomePage;
 
 const styles = StyleSheet.create({
-  imageContainer: {
-    left: 8
-  },
-  imageContainer3: {
-    height: 80,
-    width: 80,
-    borderRadius: 64,
-    bottom: 200,
-    paddingLeft: 320
-  },
+  imageContainer: {},
   image: {
     height: 80,
     borderRadius: 64
@@ -148,21 +150,20 @@ const styles = StyleSheet.create({
     borderColor: "black",
     bottom: 160,
     width: 100,
-    left: 10
+    right: 150
   },
   lunchword: {
     borderWidth: 1,
     borderColor: "black",
     bottom: 181,
-    width: 100,
-    left: 150
+    width: 100
   },
   dinnerword: {
     borderWidth: 1,
     borderColor: "black",
     bottom: 200,
     width: 100,
-    left: 300
+    left: 150
   },
   medication: {
     bottom: 100,
