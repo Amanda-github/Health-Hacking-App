@@ -1,6 +1,7 @@
 import React from "react";
 import HomePage from "../pages/HomePage";
 import Profile from "../pages/Profile";
+import Activity from "../navigators/ActivityNavigation";
 import Breakfast from "../navigators/BreakfastNavigation";
 import Lunch from "../pages/Lunch";
 import Dinner from "../pages/Dinner";
@@ -41,6 +42,11 @@ const TabNavigation = () => {
         name="DinnerScreen"
         component={Dinner}
         options={{ title: "Dinner" }}
+      />
+      <Drawer.Screen
+        name="ActivityScreen"
+        component={Activity}
+        options={{ title: "Activity" }}
       />
     </Drawer.Navigator>
   );
