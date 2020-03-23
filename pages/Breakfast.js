@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Container, Content, Card, Button, Text } from "native-base";
 import { View } from "react-native";
 
@@ -10,16 +10,16 @@ const Breakfast = ({ navigation }) => {
           <Button
             block
             bordered
-            onPress={() => navigation.navigate("EggScreen")}
+            onPress={() => navigation.navigate("CoffeeScreen")}
           >
-            <Text>Hard Boiled Egg</Text>
+            <Text>Coffee</Text>
           </Button>
           <Button
             block
             bordered
-            onPress={() => navigation.navigate("CoffeeScreen")}
+            onPress={() => navigation.navigate("EggScreen")}
           >
-            <Text>Coffee</Text>
+            <Text>Hard Boiled Egg</Text>
           </Button>
           <Button
             block
