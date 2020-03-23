@@ -122,20 +122,19 @@ const styles = StyleSheet.create({
     borderWidth: 2,
     borderColor: "black",
     width: 100,
-    left: 10
+    right: 150
   },
   lunch: {
     borderWidth: 2,
     borderColor: "black",
     width: 100,
-    left: 150,
     bottom: 83
   },
   dinner: {
     borderWidth: 2,
     borderColor: "black",
     width: 100,
-    left: 300,
+    left: 150,
     bottom: 167
   },
   running: {
