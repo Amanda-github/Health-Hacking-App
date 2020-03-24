@@ -12,8 +12,10 @@ const LunchNavigator = () => {
   return (
     <Stack.Navigator initialRouteName="LunchScreen">
       <Stack.Screen name="LunchScreen" component={Lunch} />
-      <Stack.Screen name="CaesarSalad" component={CaesarSalad} />
-      <Stack.Screen name="Coffee" component={Coffee} />
+      <Stack.Screen name="CaesarSaladScreen" component={CaesarSalad} />
+      <Stack.Screen name="CoffeeScreen" component={Coffee} />
+      <Stack.Screen name="InstantNoodleScreen" component={InstantNoodle} />
+      <Stack.Screen name="InstantNoodleScreen" component={Rice} />
     </Stack.Navigator>
   );
 };

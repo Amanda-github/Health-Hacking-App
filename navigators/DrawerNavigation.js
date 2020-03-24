@@ -3,7 +3,7 @@ import HomePage from "../pages/HomePage";
 import Profile from "../pages/Profile";
 import Activity from "../navigators/ActivityNavigation";
 import Breakfast from "../navigators/BreakfastNavigation";
-import Lunch from "../pages/Lunch";
+import Lunch from "../navigators/LunchNavigation";
 import Dinner from "../pages/Dinner";
 import { createDrawerNavigator } from "@react-navigation/drawer";
 
