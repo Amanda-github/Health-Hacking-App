@@ -35,6 +35,7 @@ const HomePage = ({ navigation }) => {
           <Text style={{ textAlign: "center", paddingTop: 80 }}>
             Summary Here
           </Text>
+          {/* <Consumed /> */}
           <View style={{ alignItems: "center", top: 78 }}>
             <Button
               style={{ borderRadius: 100, width: 140 }}

@@ -1,4 +1,5 @@
 import React from "react";
+import HomePage from "../pages/HomePage";
 import Breakfast from "../pages/Breakfast";
 import Coffee from "../breakfast_screen/Coffee";
 import Egg from "../breakfast_screen/Egg";
@@ -31,6 +32,11 @@ const BreakfastNavigator = () => {
         name="WholeMealBreadScreen"
         component={WholeMealBread}
         options={{ title: "WholeMealBread" }}
+      />
+      <Stack.Screen
+        name="HomeScreen"
+        component={HomePage}
+        options={{ title: "Home" }}
       />
     </Stack.Navigator>
   );

@@ -37,6 +37,16 @@ const Lunch = ({ navigation }) => {
               <Text>Rice</Text>
             </Button>
           </Card>
+          <View style={{ alignItems: "center", top: 78 }}>
+            <Button
+              small
+              info
+              onPress={() => navigation.goBack("HomeScreen")}
+              style={{ width: 140 }}
+            >
+              <Text>Home</Text>
+            </Button>
+          </View>
         </View>
       </Content>
     </Container>

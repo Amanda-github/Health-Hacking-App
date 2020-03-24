@@ -60,7 +60,7 @@ const Login = ({ navigation, setLogin }) => {
           <Image
             source={require("./img/Logo.png")}
             style={{ width: 200, height: 200 }}
-          />{" "}
+          />
         </View>
         <TextInput
           style={styles.input}

@@ -4,7 +4,7 @@ import Profile from "../pages/Profile";
 import Activity from "./ActivityNavigation";
 import BreakfastNavigator from "./BreakfastNavigation";
 import Lunch from "./LunchNavigation";
-import Dinner from "../pages/Dinner";
+import Dinner from "./DinnerNavigation";
 import { createDrawerNavigator } from "@react-navigation/drawer";
 
 const Drawer = createDrawerNavigator();

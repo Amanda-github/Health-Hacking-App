@@ -3,16 +3,12 @@ import { Container, Card, Content, Text } from "native-base";
 import RNPickerSelect from "react-native-picker-select";
 import axios from "axios";
 
-const Running = () => {
+const Running = ({ jwt }) => {
   const [burnt, setBurnt] = useState("");
-  //change
-  const jwt =
-    "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1ODQ5NDk1NTEsIm5iZiI6MTU4NDk0OTU1MSwianRpIjoiMzg0Nzc5MWQtNmY1ZS00MGQ3LWI1MmItNjg4MzIwYzc2M2UzIiwiZXhwIjoxNTg0OTUwNDUxLCJpZGVudGl0eSI6InRlc3QiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.HD6a5kFZ60Sf5aUsUQLaL3i6UvrguWpZhP2YQywx_pM";
   const update = value => {
     console.log(value);
     axios({
       method: "POST",
-      //change url
       url: "http://team-4.herokuapp.com/api/v1/user_meal/create",
       headers: { Authorization: `Bearer ${jwt}` },
       data: {
@@ -38,8 +34,6 @@ const Running = () => {
         <Content>
           <Text>
             Running
-            {"\n"}
-            218kcal | 30 mins
             {"\n"}
             {"\n"}
           </Text>
