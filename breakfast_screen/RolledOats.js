@@ -2,7 +2,7 @@ import React from "react";
 import RNPickerSelect from "react-native-picker-select";
 import { Container, Content, Card, Button, Text, View } from "native-base";
 
-const RolledOats = () => {
+const RolledOats = ({jwt}) => {
   return (
     <RNPickerSelect
       onValueChange={value => console.log(value)}

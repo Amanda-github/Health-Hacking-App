@@ -11,6 +11,14 @@ class Profile extends Component {
   setModalVisible(visible) {
     this.setState({ modalVisible: visible });
   }
+
+  logoutprofile = () => {
+    console.log('logged out')
+    const setLogin = this.props.setLogin
+    console.log(setLogin)
+    setLogin(false)
+  }
+
   render() {
     return (
       <ImageBackground
