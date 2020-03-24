@@ -10,7 +10,7 @@ import Consumed from "../summary/Consumed";
 import { Button, Icon } from "react-native-elements";
 import "react-native-gesture-handler";
 
-const HomePage = ({ navigation, value }) => {
+const HomePage = ({ navigation }) => {
   const date = new Date().getDate();
   const month = new Date().getMonth() + 1;
   const year = new Date().getFullYear();
@@ -33,7 +33,7 @@ const HomePage = ({ navigation, value }) => {
         </View>
         <View style={{ borderWidth: 1, borderColor: "black" }}>
           <Text style={{ textAlign: "center", paddingTop: 80 }}>
-            Summary Here <Consumed />
+            Summary Here
           </Text>
           <View style={{ alignItems: "center", top: 78 }}>
             <Button
