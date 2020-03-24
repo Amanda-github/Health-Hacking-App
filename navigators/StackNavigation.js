@@ -5,13 +5,13 @@ import SignUp from "../pages/Signup";
 
 const Stack = createStackNavigator();
 
-const MainStack = ({ setLogin }) => {
+const MainStack = ({ setLogin,setJwt }) => {
   return (
     <>
       <Stack.Navigator initialRouteName="LoginScreen">
         <Stack.Screen
           name="LoginScreen"
-          component={props => <Login {...props} setLogin={setLogin} />}
+          component={props => <Login {...props} setLogin={setLogin} setJwt={setJwt}/>}
           options={{ title: "Log In Here" }}
         />
         <Stack.Screen

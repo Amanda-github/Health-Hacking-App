@@ -12,7 +12,7 @@ import {
 import { Image } from "react-native-elements";
 import axios from "axios";
 
-const Login = ({ navigation, setLogin }) => {
+const Login = ({ navigation,setLogin,setJwt}) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
@@ -22,9 +22,7 @@ const Login = ({ navigation, setLogin }) => {
   const handlePassword = e => {
     setPassword(e.target.value);
   };
-
   const login = () => {
-    console.log(username, password);
     axios({
       method: "POST",
       url: "https://team-4.herokuapp.com/api/v1/users/login",
@@ -37,8 +35,8 @@ const Login = ({ navigation, setLogin }) => {
         console.log(response.data);
         if (response.data.status) {
           // localStorage.setItem('jwt', response.data.access_token)
-          AsyncStorage.setItem("jwt", response.data.access_token);
           setLogin(true);
+          setJwt(response.data.access_token)
         }
       })
       .catch(error => {
@@ -60,7 +58,7 @@ const Login = ({ navigation, setLogin }) => {
           <Image
             source={require("./img/Logo.png")}
             style={{ width: 200, height: 200 }}
-          />{" "}
+          />
         </View>
         <TextInput
           style={styles.input}
