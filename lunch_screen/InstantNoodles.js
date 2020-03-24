@@ -16,3 +16,5 @@ const InstantNoodles = () => {
     </Container>
   );
 };
+
+export default InstantNoodles;

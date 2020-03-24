@@ -1,18 +1,45 @@
 import React from "react";
-import RNPickerSelect from "react-native-picker-select";
-const Lunch = () => {
+import { Container, Content, Card, Button, Text } from "native-base";
+import { View } from "react-native";
+
+const Lunch = ({ navigation }) => {
   return (
-    <RNPickerSelect
-      onValueChange={value => console.log(value)}
-      items={[
-        { label: "Rice - 100kcal", value: "Rice - 100kcal" },
-        {
-          label: "Instant Noodles - 10kcal",
-          value: "Instant Noodles - 10kcal"
-        },
-        { label: "Coffee - 2kcal", value: "Coffee - 2kcal" }
-      ]}
-    />
+    <Container>
+      <Content>
+        <View>
+          <Card>
+            <Button
+              block
+              bordered
+              onPress={() => navigation.navigate("CaesarSaladScreen")}
+            >
+              <Text>Caesar Salad</Text>
+            </Button>
+            <Button
+              block
+              bordered
+              onPress={() => navigation.navigate("CoffeeScreen")}
+            >
+              <Text>Coffee</Text>
+            </Button>
+            <Button
+              block
+              bordered
+              onPress={() => navigation.navigate("InstantNoodleScreen")}
+            >
+              <Text>Instant Noodles</Text>
+            </Button>
+            <Button
+              block
+              bordered
+              onPress={() => navigation.navigate("RiceScreen")}
+            >
+              <Text>Rice</Text>
+            </Button>
+          </Card>
+        </View>
+      </Content>
+    </Container>
   );
 };
 export default Lunch;

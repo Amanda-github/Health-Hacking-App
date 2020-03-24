@@ -6,6 +6,7 @@ import {
   TouchableHighlight,
   StyleSheet
 } from "react-native";
+
 import { Button, Icon } from "react-native-elements";
 import "react-native-gesture-handler";
 

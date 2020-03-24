@@ -1,9 +1,9 @@
 import React from "react";
 import HomePage from "../pages/HomePage";
 import Profile from "../pages/Profile";
-import Activity from "../navigators/ActivityNavigation";
-import Breakfast from "../navigators/BreakfastNavigation";
-import Lunch from "../pages/Lunch";
+import Activity from "./ActivityNavigation";
+import BreakfastNavigator from "./BreakfastNavigation";
+import Lunch from "./LunchNavigation";
 import Dinner from "../pages/Dinner";
 import { createDrawerNavigator } from "@react-navigation/drawer";
 
@@ -30,13 +30,13 @@ const TabNavigation = () => {
       />
       <Drawer.Screen
         name="BreakfastScreen"
-        component={Breakfast}
+        component={BreakfastNavigator}
         options={{ title: "Breakfast Menu" }}
       />
       <Drawer.Screen
         name="LunchScreen"
         component={Lunch}
-        options={{ title: "Lunch" }}
+        options={{ title: "Lunch Menu" }}
       />
       <Drawer.Screen
         name="DinnerScreen"
@@ -46,7 +46,7 @@ const TabNavigation = () => {
       <Drawer.Screen
         name="ActivityScreen"
         component={Activity}
-        options={{ title: "Activity" }}
+        options={{ title: "Workouts" }}
       />
     </Drawer.Navigator>
   );
