@@ -32,9 +32,9 @@ const Lunch = ({ navigation }) => {
             <Button
               block
               bordered
-              onPress={() => navigation.navigate("RiceScreen")}
+              onPress={() => navigation.navigate("WhiteRiceScreen")}
             >
-              <Text>Rice</Text>
+              <Text>WhiteRice</Text>
             </Button>
           </Card>
           <View style={{ alignItems: "center", top: 78 }}>

@@ -26,6 +26,7 @@ const HomePage = ({ navigation }) => {
         }}
       >
         <View style={{ borderWidth: 1, borderColor: "black", padding: 20 }}>
+          <Button onPress={() => navigation.navigate("DrawerScreen")} />
           <Text style={{ textAlign: "center" }}>
             <b>Today</b>
           </Text>

@@ -5,6 +5,7 @@ import Activity from "./ActivityNavigation";
 import BreakfastNavigator from "./BreakfastNavigation";
 import Lunch from "./LunchNavigation";
 import Dinner from "./DinnerNavigation";
+import SideBar from "../pages/SideBar";
 import { createDrawerNavigator } from "@react-navigation/drawer";
 
 const Drawer = createDrawerNavigator();
@@ -47,6 +48,11 @@ const TabNavigation = () => {
         name="ActivityScreen"
         component={Activity}
         options={{ title: "Workouts" }}
+      />
+      <Drawer.Screen
+        name="DrawerScreen"
+        component={SideBar}
+        options={{ title: "Menu" }}
       />
     </Drawer.Navigator>
   );

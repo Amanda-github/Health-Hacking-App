@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import RNPickerSelect from "react-native-picker-select";
-import { Container, Content, Card, Button, Text, View } from "native-base";
+import { Container, Content, Card, Text, View } from "native-base";
 import axios from "axios";
 
 const WholeMealBread = ({ jwt }) => {
@@ -24,7 +24,7 @@ const WholeMealBread = ({ jwt }) => {
       })
       .catch(error => {
         setMultiple(value * 78);
-        console.error(error.response); // so that we know what went wrong if the request failed
+        console.error(error.response);
       });
     console.log(multiple);
   };
@@ -39,7 +39,7 @@ const WholeMealBread = ({ jwt }) => {
                 {"\n"}
                 Amount per slice: 29g
                 {"\n"}
-                Calories: 78kcal
+                Calories: 78 kcal
                 {"\n"}
                 {"\n"}
               </h2>

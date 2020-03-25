@@ -2,7 +2,7 @@ import React from "react";
 import RNPickerSelect from "react-native-picker-select";
 import { Container, Content, Card, Button, Text, View } from "native-base";
 
-const Rice = () => {
+const WhiteRice = () => {
   return (
     <Container>
       <Card>
@@ -23,4 +23,4 @@ const Rice = () => {
   );
 };
 
-export default Rice;
+export default WhiteRice;

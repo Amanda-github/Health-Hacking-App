@@ -5,7 +5,7 @@ import HomePage from "../pages/HomePage";
 import CaesarSalad from "../dinner_screen/CaesarSalad";
 import Coffee from "../dinner_screen/Coffee";
 import InstantNoodles from "../dinner_screen/InstantNoodles";
-import Rice from "../dinner_screen/Rice";
+import WhiteRice from "../dinner_screen/WhiteRice";
 
 const Stack = createStackNavigator();
 
@@ -33,9 +33,9 @@ const DinnerNavigator = () => {
         options={{ title: "Instant Noodles" }}
       />
       <Stack.Screen
-        name="RiceScreen"
-        component={Rice}
-        options={{ title: "Rice" }}
+        name="WhiteRiceScreen"
+        component={WhiteRice}
+        options={{ title: "White Rice" }}
       />
       <Stack.Screen
         name="HomeScreen"
