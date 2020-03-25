@@ -7,10 +7,12 @@ import Lunch from "./LunchNavigation";
 import Dinner from "./DinnerNavigation";
 import SideBar from "../pages/SideBar";
 import { createDrawerNavigator } from "@react-navigation/drawer";
+import { set } from "react-native-reanimated";
 
 const Drawer = createDrawerNavigator();
 
-const TabNavigation = () => {
+const TabNavigation = ({setLogin,jwt}) => {
+  
   return (
     <Drawer.Navigator
       initialRouteName="HomeScreen"
@@ -26,12 +28,12 @@ const TabNavigation = () => {
       />
       <Drawer.Screen
         name="ProfileScreen"
-        component={Profile}
+        component={props => <Profile {...props} setLogin={setLogin}/>}
         options={{ title: "My Profile" }}
       />
       <Drawer.Screen
         name="BreakfastScreen"
-        component={BreakfastNavigator}
+        component={props => <BreakfastNavigator {...props} jwt={jwt} />}
         options={{ title: "Breakfast Menu" }}
       />
       <Drawer.Screen
