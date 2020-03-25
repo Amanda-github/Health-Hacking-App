@@ -127,7 +127,8 @@ const styles = StyleSheet.create({
     borderWidth: 2,
     borderColor: "black",
     width: 100,
-    right: 150
+    right: 120,
+    top: 2
   },
   lunch: {
     borderWidth: 2,
@@ -139,7 +140,7 @@ const styles = StyleSheet.create({
     borderWidth: 2,
     borderColor: "black",
     width: 100,
-    left: 150,
+    left: 120,
     bottom: 167
   },
   running: {
@@ -153,7 +154,7 @@ const styles = StyleSheet.create({
     borderColor: "black",
     bottom: 160,
     width: 100,
-    right: 150
+    right: 120
   },
   lunchword: {
     borderWidth: 1,
@@ -166,7 +167,7 @@ const styles = StyleSheet.create({
     borderColor: "black",
     bottom: 200,
     width: 100,
-    left: 150
+    left: 120
   },
   medication: {
     bottom: 100,
