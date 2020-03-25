@@ -19,11 +19,11 @@ const Cycling = ({ jwt }) => {
       .then(response => {
         console.log(response);
         if (response.data.success) {
-          setBurnt(value * 3.9);
+          setBurnt(value * 6.16);
         }
       })
       .catch(error => {
-        setBurnt(value * 3.9);
+        setBurnt(value * 6.16);
         console.error(error.response);
       });
     console.log(burnt);
@@ -33,7 +33,7 @@ const Cycling = ({ jwt }) => {
       <Card style={{ margin: 20 }}>
         <Content>
           <Text>
-            Running
+            Cycling
             {"\n"}
             {"\n"}
           </Text>

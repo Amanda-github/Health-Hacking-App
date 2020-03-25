@@ -33,7 +33,7 @@ const Circuit = ({ jwt }) => {
       <Card style={{ margin: 20 }}>
         <Content>
           <Text>
-            Running
+            Circuit
             {"\n"}
             {"\n"}
           </Text>
