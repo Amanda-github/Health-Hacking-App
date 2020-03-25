@@ -2,9 +2,9 @@ import React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
 import Lunch from "../pages/Lunch";
 import HomePage from "../pages/HomePage";
-import CaesarSalad from "../lunch_screen/CaesarSalad";
+import BrownRice from "../lunch_screen/BrownRice";
 import Coffee from "../lunch_screen/Coffee";
-import InstantNoodles from "../lunch_screen/InstantNoodles";
+import ChickenRice from "../lunch_screen/ChickenRice";
 import WhiteRice from "../lunch_screen/WhiteRice";
 
 const Stack = createStackNavigator();
@@ -18,24 +18,24 @@ const LunchNavigator = () => {
         options={{ title: "Lunch Menu" }}
       />
       <Stack.Screen
-        name="CaesarSaladScreen"
-        component={CaesarSalad}
-        options={{ title: "Caesar Salad" }}
-      />
-      <Stack.Screen
         name="CoffeeScreen"
         component={Coffee}
         options={{ title: "Coffee" }}
       />
       <Stack.Screen
-        name="InstantNoodleScreen"
-        component={InstantNoodles}
-        options={{ title: "Instant Noodles" }}
+        name="ChickenRiceScreen"
+        component={ChickenRice}
+        options={{ title: "Chicken Rice" }}
       />
       <Stack.Screen
         name="WhiteRiceScreen"
         component={WhiteRice}
         options={{ title: "White Rice" }}
+      />
+      <Stack.Screen
+        name="BrownRiceScreen"
+        component={BrownRice}
+        options={{ title: "Brown Rice" }}
       />
       <Stack.Screen
         name="HomeScreen"

@@ -3,7 +3,7 @@ import RNPickerSelect from "react-native-picker-select";
 import { Container, Content, Card, Text, View } from "native-base";
 import axios from "axios";
 
-const WhiteRice = ({ jwt }) => {
+const ChickenRice = ({ jwt }) => {
   const [multiple, setMultiple] = useState("");
   const update = value => {
     console.log(value);
@@ -12,18 +12,18 @@ const WhiteRice = ({ jwt }) => {
       url: "http://team-4.herokuapp.com/api/v1/user_meal/create",
       headers: { Authorization: `Bearer ${jwt}` },
       data: {
-        food: "WhiteRice",
+        food: "ChickenRice",
         serving: value
       }
     })
       .then(response => {
         console.log(response);
         if (response.data.success) {
-          setMultiple(value * 1.23);
+          setMultiple(value * 343.7);
         }
       })
       .catch(error => {
-        setMultiple(value * 1.23);
+        setMultiple(value * 343.7);
         console.error(error.response);
       });
     console.log(multiple);
@@ -37,13 +37,11 @@ const WhiteRice = ({ jwt }) => {
               <h2>
                 Nutrition Facts:
                 {"\n"}
-                Amount: 100g
+                Amount: 1 serving
                 {"\n"}
-                Calories: 123 kcal
+                Calories: 343.7 kcal
                 {"\n"}
-                {"\n"}* White rice is bland, low in fiber and easy to digest,
-                making it a good option for people with digestive problems,
-                nausea or heartburn.
+                {"\n"}
               </h2>
             </Text>
           </View>
@@ -58,10 +56,10 @@ const WhiteRice = ({ jwt }) => {
               placeholder={{ label: "Select an option", value: "null" }}
               onValueChange={value => update(value)}
               items={[
-                { label: "50g ", value: "50" },
-                { label: "100g ", value: "100" },
-                { label: "150g ", value: "150" },
-                { label: "200g ", value: "200" }
+                { label: "1 serving", value: "1" },
+                { label: "2 servings", value: "2" },
+                { label: "3 servings", value: "3" },
+                { label: "4 servings", value: "4" }
               ]}
             />
           </View>
@@ -79,4 +77,4 @@ const WhiteRice = ({ jwt }) => {
   );
 };
 
-export default WhiteRice;
+export default ChickenRice;

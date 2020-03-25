@@ -12,9 +12,9 @@ const Dinner = ({ navigation }) => {
               <Button
                 block
                 bordered
-                onPress={() => navigation.navigate("CaesarSaladScreen")}
+                onPress={() => navigation.navigate("BrownRiceScreen")}
               >
-                <Text>Caesar Salad</Text>
+                <Text>Brown Rice</Text>
               </Button>
               <Button
                 block
@@ -26,9 +26,9 @@ const Dinner = ({ navigation }) => {
               <Button
                 block
                 bordered
-                onPress={() => navigation.navigate("InstantNoodleScreen")}
+                onPress={() => navigation.navigate("ChickenRiceScreen")}
               >
-                <Text>Instant Noodles</Text>
+                <Text>Chicken Rice</Text>
               </Button>
               <Button
                 block
