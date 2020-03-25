@@ -76,6 +76,16 @@ const Activities = ({ navigation }) => {
             >
               <Text>Circuit Training</Text>
             </Button>
+            <Card>
+              <Button
+                small
+                bordered
+                info
+                onPress={() => navigation.navigate("HomeScreen")}
+              >
+                <Text>Back</Text>
+              </Button>
+            </Card>
           </Content>
         </Card>
       </Content>

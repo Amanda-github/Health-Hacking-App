@@ -3,8 +3,7 @@ import RNPickerSelect from "react-native-picker-select";
 import { Container, Content, Card, Text, View } from "native-base";
 import axios from "axios";
 
-
-const RolledOats = ({ jwt }) => {
+const ChickenRice = ({ jwt }) => {
   const [multiple, setMultiple] = useState("");
   const update = value => {
     console.log(value);
@@ -13,23 +12,22 @@ const RolledOats = ({ jwt }) => {
       url: "http://team-4.herokuapp.com/api/v1/user_meal/create",
       headers: { Authorization: `Bearer ${jwt}` },
       data: {
-        food: "Rolled Oats",
+        food: "ChickenRice",
         serving: value
       }
     })
       .then(response => {
         console.log(response);
         if (response.data.success) {
-          setMultiple(value * 3.89);
+          setMultiple(value * 343.7);
         }
       })
       .catch(error => {
-        setMultiple(value * 3.89);
+        setMultiple(value * 343.7);
         console.error(error.response);
       });
     console.log(multiple);
   };
-
   return (
     <Container>
       <Card>
@@ -39,12 +37,11 @@ const RolledOats = ({ jwt }) => {
               <h2>
                 Nutrition Facts:
                 {"\n"}
-                Amount: 100g
+                Amount: 1 serving
                 {"\n"}
-                Calories: 389 kcal
+                Calories: 343.7 kcal
                 {"\n"}
                 {"\n"}
-                *Oats are very low in sugar, with only 1% coming from sucrose.
               </h2>
             </Text>
           </View>
@@ -59,10 +56,10 @@ const RolledOats = ({ jwt }) => {
               placeholder={{ label: "Select an option", value: "null" }}
               onValueChange={value => update(value)}
               items={[
-                { label: "50 g", value: "50" },
-                { label: "100 g", value: "100" },
-                { label: "150 g", value: "150" },
-                { label: "200 g", value: "200" }
+                { label: "1 serving", value: "1" },
+                { label: "2 servings", value: "2" },
+                { label: "3 servings", value: "3" },
+                { label: "4 servings", value: "4" }
               ]}
             />
           </View>
@@ -80,4 +77,4 @@ const RolledOats = ({ jwt }) => {
   );
 };
 
-export default RolledOats;
+export default ChickenRice;

@@ -1,21 +1,21 @@
 import React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
-import Lunch from "../pages/Lunch";
+import Dinner from "../pages/Dinner";
 import HomePage from "../pages/HomePage";
 import BrownRice from "../lunch_screen/BrownRice";
-import Coffee from "../lunch_screen/Coffee";
-import ChickenRice from "../lunch_screen/ChickenRice";
-import WhiteRice from "../lunch_screen/WhiteRice";
+import Coffee from "../dinner_screen/Coffee";
+import ChickenRice from "../dinner_screen/ChickenRice";
+import WhiteRice from "../dinner_screen/WhiteRice";
 
 const Stack = createStackNavigator();
 
-const LunchNavigator = () => {
+const DinnerNavigator = () => {
   return (
-    <Stack.Navigator initialRouteName="LunchScreen">
+    <Stack.Navigator initialRouteName="DinnerScreen">
       <Stack.Screen
-        name="LunchScreen"
-        component={Lunch}
-        options={{ title: "Lunch Menu" }}
+        name="Dinner"
+        component={Dinner}
+        options={{ title: "Dinner" }}
       />
       <Stack.Screen
         name="CoffeeScreen"
@@ -46,4 +46,4 @@ const LunchNavigator = () => {
   );
 };
 
-export default LunchNavigator;
+export default DinnerNavigator;

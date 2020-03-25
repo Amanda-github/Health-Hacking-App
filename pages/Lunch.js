@@ -11,9 +11,9 @@ const Lunch = ({ navigation }) => {
             <Button
               block
               bordered
-              onPress={() => navigation.navigate("CaesarSaladScreen")}
+              onPress={() => navigation.navigate("BrownRiceScreen")}
             >
-              <Text>Caesar Salad</Text>
+              <Text>Brown Rice</Text>
             </Button>
             <Button
               block
@@ -25,18 +25,28 @@ const Lunch = ({ navigation }) => {
             <Button
               block
               bordered
-              onPress={() => navigation.navigate("InstantNoodleScreen")}
+              onPress={() => navigation.navigate("ChickenRiceScreen")}
             >
-              <Text>Instant Noodles</Text>
+              <Text>Chicken Rice</Text>
             </Button>
             <Button
               block
               bordered
-              onPress={() => navigation.navigate("RiceScreen")}
+              onPress={() => navigation.navigate("WhiteRiceScreen")}
             >
-              <Text>Rice</Text>
+              <Text>WhiteRice</Text>
             </Button>
           </Card>
+          <View style={{ alignItems: "center", top: 78 }}>
+            <Button
+              small
+              info
+              onPress={() => navigation.goBack("HomeScreen")}
+              style={{ width: 140 }}
+            >
+              <Text>Home</Text>
+            </Button>
+          </View>
         </View>
       </Content>
     </Container>
