@@ -7,6 +7,7 @@ import {
   StyleSheet
 } from "react-native";
 import Consumed from "../summary/Consumed";
+import Reminder from "../reminder/Reminder";
 import { Button, Icon } from "react-native-elements";
 import "react-native-gesture-handler";
 
@@ -106,6 +107,7 @@ const HomePage = ({ navigation }) => {
         </View>
         <View style={styles.medication}>
           <Text style={{ textAlign: "center" }}>Medication Reminder</Text>
+          <Reminder />
         </View>
       </View>
     </>
