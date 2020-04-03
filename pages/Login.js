@@ -1,20 +1,22 @@
-import React, { useState } from "react";
-import { AsyncStorage } from "react-native";
+import React, { useState, useHistory } from "react";
 import {
   View,
   Text,
   TouchableOpacity,
   TextInput,
   StyleSheet,
-  ImageBackground
+  ImageBackground,
+  AsyncStorage
 } from "react-native";
 
-import { Image } from "react-native-elements";
+import { Image, Icon } from "react-native-elements";
 import axios from "axios";
 
-const Login = ({ navigation,setLogin,setJwt}) => {
+const Login = ({ navigation, setLogin, setJwt }) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const history = useHistory();
+  console.log(history);
 
   const handleUsername = e => {
     setUsername(e.target.value);
@@ -34,9 +36,8 @@ const Login = ({ navigation,setLogin,setJwt}) => {
       .then(response => {
         console.log(response.data);
         if (response.data.status) {
-          // localStorage.setItem('jwt', response.data.access_token)
           setLogin(true);
-          setJwt(response.data.access_token)
+          AsyncStorage.setJwt(response.data.access_token);
         }
       })
       .catch(error => {
@@ -77,7 +78,10 @@ const Login = ({ navigation,setLogin,setJwt}) => {
           onChange={handlePassword}
         />
         <TouchableOpacity style={styles.submitButton} onClick={login}>
-          <Text style={styles.submitButtonText}> Log in </Text>
+          <Text style={styles.submitButtonText}>
+            Log In
+            <Icon name="user-circle-o" type="font-awesome" />
+          </Text>
         </TouchableOpacity>
         <TouchableOpacity>
           <Text
@@ -118,7 +122,8 @@ const styles = StyleSheet.create({
     width: 335
   },
   submitButtonText: {
-    color: "white"
+    color: "white",
+    flexDirection: "row"
   },
   background: {
     width: "100%",

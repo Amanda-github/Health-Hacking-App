@@ -12,7 +12,7 @@ const Consumed = ({ jwt }) => {
       Authorization: `Bearer ${jwt}`
     }
   };
-
+  //update url
   let breakfast = "http://team-4.herokuapp.com/api/v1/user_meal/create";
   let lunch = "http://team-4.herokuapp.com/api/v1/user_meal/create";
   let dinner = "http://team-4.herokuapp.com/api/v1/user_meal/create";
