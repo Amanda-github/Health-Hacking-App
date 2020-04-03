@@ -6,7 +6,7 @@ import {
   TouchableHighlight,
   StyleSheet
 } from "react-native";
-// import Consumed from "../summary/Consumed";
+import Consumed from "../summary/Consumed";
 import Reminder from "../reminder/Reminder";
 import { Button, Icon } from "react-native-elements";
 import "react-native-gesture-handler";
