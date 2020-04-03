@@ -24,7 +24,8 @@ const Reminder = ({ jwt }) => {
   const reminder = () => {
     axios({
       method: "POST",
-      url: "...",
+      //update url
+      url: "http://team-4.herokuapp.com/api/v1/user_meal/create",
       headers: { Authorization: `Bearer ${jwt}` },
       data: {
         task: task,

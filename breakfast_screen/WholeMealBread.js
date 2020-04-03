@@ -5,6 +5,8 @@ import axios from "axios";
 
 const WholeMealBread = ({ jwt }) => {
   const [multiple, setMultiple] = useState("");
+  console.log(jwt);
+
   const update = value => {
     console.log(value);
     axios({

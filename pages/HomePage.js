@@ -6,7 +6,7 @@ import {
   TouchableHighlight,
   StyleSheet
 } from "react-native";
-import Consumed from "../summary/Consumed";
+// import Consumed from "../summary/Consumed";
 import Reminder from "../reminder/Reminder";
 import { Button, Icon } from "react-native-elements";
 import "react-native-gesture-handler";
@@ -21,8 +21,7 @@ const HomePage = ({ navigation }) => {
     <>
       <View
         style={{
-          backgroundColor: "#eee",
-          borderRadius: 10,
+          backgroundColor: "mintcream",
           overflow: "hidden"
         }}
       >
@@ -37,8 +36,7 @@ const HomePage = ({ navigation }) => {
           <Text style={{ textAlign: "center", paddingTop: 80 }}>
             Summary Here
           </Text>
-          {/* <Consumed /> */}
-          <View style={{ alignItems: "center", top: 78 }}>
+          <View style={{ alignItems: "center", top: 78, borderColor: "black" }}>
             <Button
               style={{ borderRadius: 100, width: 140 }}
               title="Activities Page"
